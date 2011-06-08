@@ -1,0 +1,196 @@
+body.john_lewis { background:#96b3e3 url(images/john-lewis.jpg) no-repeat scroll 50% 0; }
+body.john_lewis #root { background: #ffffff none repeat scroll 0 0; }
+body.john_lewis #content { background-color: #ffffff; }
+body.john_lewis #footer { background-color: #ffffff; }
+body.john_lewis #content { margin-bottom: 0 !important; } 
+
+body.ski_travel { background:#ffffff url(images/wallpaper_canada.jpg) no-repeat fixed 50% 0; }
+body.ski_travel #root { background: #ffffff none repeat fixed 0 0; }
+body.ski_travel #content { background-color: #ffffff; }
+body.ski_travel #footer { background-color: #ffffff; }
+body.ski_travel #content { margin-bottom: 0 !important; } 
+
+body.ski_med { background:#ffffff url(images/club-med.jpg) no-repeat fixed 50% 0; }
+body.ski_med #root { background: #ffffff none repeat fixed 0 0; }
+body.ski_med #content { background-color: #ffffff; }
+body.ski_med #footer { background-color: #ffffff; }
+body.ski_med #content { margin-bottom: 0 !important; } 
+
+body.no_partner { background: none; }
+body.no_partner #root { background: #ffffff none repeat fixed 0 0; }
+body.no_partner #content { background-color: #ffffff; }
+body.no_partner #footer { background-color: #ffffff; }
+body.no_partner #content { margin-bottom: 0 !important; } 
+
+body.furtherEd { background:#ffffff url(images/ncfe.jpg) no-repeat fixed 50% 0; }
+body.furtherEd #root { background: #ffffff none repeat fixed 0 0; }
+body.furtherEd #content { background-color: #ffffff; }
+body.furtherEd #footer { background-color: #ffffff; }
+body.furtherEd #content { margin-bottom: 0 !important; }
+
+body.money_ae { background:#000000 url(images/ae.gif) no-repeat fixed 50% 0; }
+body.money_ae #root { background: #ffffff none repeat fixed 0 0; }
+body.money_ae #content { background-color: #ffffff; }
+body.money_ae #footer { background-color: #ffffff; }
+body.money_ae #content { margin-bottom: 0 !important; } 
+
+body.dhl { background-attachment: fixed; background-color: #FFCC00; background-image: url(images/dhl_wallpaper.gif); background-repeat: no-repeat; background-position: 50% 0; }
+body.dhl #root { background-attachment: fixed; background-color: #ffffff; background-image: none; background-repeat: repeat; background-position: 0 0; }
+body.dhl #content { background-color: #ffffff; }
+body.dhl #footer { background-color: #ffffff; }
+body.dhl #content { margin-bottom: 0 !important; } 
+
+
+body.teeside { background-attachment: fixed; background-color: #FFCC00; background-image: url(images/teeside.jpg); background-repeat: no-repeat; background-position: 50% 0; }
+body.teeside #root { background-attachment: fixed; background-color: #ffffff; background-image: none; background-repeat: repeat; background-position: 0 0; }
+body.teeside #content { background-color: #ffffff; }
+body.teeside #footer { background-color: #ffffff; }
+body.teeside #content { margin-bottom: 0 !important; } 
+
+/* Racing */
+.racing { padding: 0 0 2em; font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif; }
+.racing h2 { color: #333; font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif; font-size: 1.8em; }
+.racing h3 { overflow: hidden; color: #B22; font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif; font-weight: 700; font-size: 1.1em; text-transform: uppercase; }
+.racing h3.separated { margin: 0 0 15px; padding: 0 0 8px; border-bottom: 4px solid #cdcdcd; }
+.racing h3 a.right { float: right; font-size: 1.1em; font-weight: 400; text-transform: none; }
+.racing .table { margin-top: 5px; padding: 10px 8px 0; border: 1px solid #cdcdcd; background: #fff url("images/video-editors-choice-background.png") repeat-x 0 0; }
+.racing table { width: 100%; border-collapse: collapse; font-size: 1.3em; }
+.racing table th { padding: 1em 0; color: #125581; text-align: left; }
+.racing table td { padding: 1.25ex 0; border-top: 1px solid #cdcdcd; }
+.racing table a.nagme { float: right; margin-right: 10px; }
+a.nagme { float: left; width: 43px; padding: 0 1px 3px 17px; background: transparent url("images/nagme.png") no-repeat 0 0; color: #fff; font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif; font-size: 9px; font-weight: 400; line-height: 12px; text-align: center; }
+a.nagme:hover { background-position: 0 100%; color: #fff; text-decoration: none; }
+
+/* Saab */
+.bellyb { margin: 0 0 0 8px; border-bottom: 10px solid #ffffff; background: #ffffff; }
+
+
+/* Skyscraper */
+div.advert { display:block; float:none; margin:0 0 10px; text-align:center; }
+div.skyAdvert { text-align: center; border-bottom: 1px solid #cdcdcd; padding: 10px 0; margin-bottom: 10px; background: #efefef; }
+
+div.advert table { margin: 0 auto; }
+div.skyAdvert table { margin: 0 auto; }
+
+.googleCols { display:block; float:none; margin:0 0 10px; font-size: 11px;  border-bottom: 5px solid #7d704d; padding: 5px 0 0 0; overflow: hidden; word-wrap:break-word; }
+.googleCols h5 { border-top:5px solid #7d704d; padding: 5px 0 0 0; margin: 0; font: bold 1.2em/22px Verdana,sans-serif; color: #7d704d; text-transform: uppercase;}
+.googleCols ul { margin: 0 0 10px 0; padding: 0; overflow: hidden;}
+.googleCols li { width: 215px; float: left; margin: 10px 10px 0 0; list-style-type: none; height: 80px;}
+#tertiaryColumn .googleCols li {width:160px!important;height:auto!important}
+#secondaryColumn .googleCols li {width:300px!important;height:auto!important}
+
+
+.googleArt { display:block; float:none; font-size: 11px; overflow: hidden;}
+.googleArt h5 { margin: 0; font: bold 1.2em/22px Verdana,sans-serif; color: #7d704d; text-transform: uppercase; }
+
+.googleGallery { overflow: hidden; width: 973px; display: block;}
+.googleGallery ul { margin: 10px 0 20px 10px; padding: 0; overflow: hidden;}
+.googleGallery li { list-style-type: none; margin: 0 20px 0 0; padding: 0; float: left; width: 220px; font-size: 1.1em; line-height: 1.2; word-wrap: break-word; display: inline;} 
+
+/* Match Centre */
+.livescore h1 { color:#333333; font:2.6em Georgia,Verdana,sans-serif; margin: 0 0 20px 0; border-bottom: 2px solid #efefef; }
+.sportType { margin: 0 0 30px 0; overflow: hidden;}				
+.sportType h2 {}
+.livescore .refresh { float: right; margin: 10px 0 0 0; }
+.livescore ul { margin: 0; padding: 0; }
+.livescore li { margin: 0 0 5px 0; padding: 0; list-style-type: none; font-size: 120%; text-align: left;}
+.livescore li.odd { float: right;}								
+.livescore .live { color: #cc0000; font-weight: bold; }
+.livescore .time { color: #a1a1a1; }
+.livescore .kickoff {font-weight: bold; }
+
+/* Hugo Boss */
+div.hugo { position: relative; margin: 0 10px; padding: 0; overflow: hidden; }
+
+div.hugo .hugoHeader { position: relative; overflow: hidden; margin: 0 0 20px 0; text-align: center; }
+div.hugo .plugHolder { clear: both; overflow: hidden; }
+
+div.hugo .hugoMpu { position: relative; overflow: hidden; float: right; width: 300px; margin: 0 0 20px 0;}
+div.hugo .right { float: right !important; text-align: left !important;  } 
+div.hugo .marg { margin: 0 !important; } 
+div.hugo p { font-size:1.1em; line-height:130%; }
+div.hugo h2 { color:#125581; font:1.7em Georgia,Arial,Helvetica,sans-serif; margin:0 0 3px; padding:0; }
+div.hugo h1 { color:#125581; font:2.2em Georgia,Arial,Helvetica,sans-serif; margin:0 0 3px; padding:0; }
+div.hugo ul { margin: 0 0 0 15px; padding: 0; }
+div.hugo li { font-size:1.1em; line-height:130%; }
+
+div.hugo .hugoEditorial { position: relative; margin: 0; float: left; width: 627px; overflow: hidden;}
+div.hugo .hugoEditorial .plug { overflow: hidden; float: left; margin: 0 0 20px 0; width: 300px; } 
+
+div.hugo .hugoAds { position: relative; margin: 0 0 20px 0; float: left; width: 100%; overflow: hidden; }
+div.hugo .hugoAds .promo { overflow: hidden; float: left; margin: 0 20px 0 0; width: 223px;  }
+
+div.hugo .hugoGal { position: relative; margin: 0 0 20px 0; float: left; width: 100%; overflow: hidden; }
+div.hugo .hugoGal .hugoImage { width: 627px; float: left; overflow: hidden; }
+div.hugo .hugoGal .hugoImageDesc { float: right; overflow: hidden; width: 300px; }
+
+div.hugo .googleCols { display:block; float:none; margin:5px 0 0; font-size: 11px;  padding: 5px 0 0 0; overflow: hidden; border: none;}
+div.hugo .googleCols h5 { padding: 5px 0 0 0; margin: 0; font: bold 1.2em/22px Verdana,sans-serif; color: #BB2222; text-transform: uppercase; border: none;}
+
+/* Cricket */
+
+h2.score-title { background: url(images/bullet.gif) no-repeat 0 9px; padding: 0 0 0 15px;}
+h2.score-title a { font-size:12px; font-weight: bold; color: ##125581; font-family: Verdana,Arial,Helvetica,sans-serif; }
+
+/* Footer */
+#footerNavigation p { line-height: 2; margin: 0 auto 8px auto !important; width: 800px; }
+
+/*Desked  Video*/
+.mainStory p.image { position: relative; text-align: left !important;}
+.story-b { position: relative; }
+
+.vidLrg span { background: transparent url(images/video/watch.png) no-repeat 0 0;  height:21px; left:10px; position:absolute; top:10px; width:76px; z-index: 10;  text-indent:-10001px;}
+.vidLrg:hover .vidIcon { background-position: 0 -21px; }
+* html .vidLrg span  { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src = 'http://www.independent.co.uk/independent.co.uk/editorial/web/styles/images/video/watch.png', sizingMethod = 'crop') }
+* html .vidLrg:hover .vidIcon  { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src = 'http://www.independent.co.uk/independent.co.uk/editorial/web/styles/images/video/watch-red.png', sizingMethod = 'crop') }
+
+/*Related Desked  Video*/
+ul.icons li.vidSml { background: transparent url(images/video/video-bullett.png) no-repeat 1px 2px; }
+div.news ul li.vidSml { background: transparent url(images/video/video-bullett.png) no-repeat -10px 3px; list-style-type: none;}
+
+/*Article  Video*/
+.artcleVid { overflow: hidden; margin: 0 0 15px 0; padding: 0 0 15px; border-bottom: 1px dotted #999999; }
+.article-new .related-articles li.vidSml  { list-style: none; }
+.article-new .related-articles li.vidSml a { background: transparent url(images/video/video-bullett.png) no-repeat 1px 3px; margin-left: -17px; padding-left: 17px; }
+
+/* Mini Index Video */
+div.section-news div.content div.news div.first { position: relative; }
+
+.indexVid span { background: transparent url(images/video/video-med.png) no-repeat 0 0;  height:22px; left:5px; position:absolute; top:5px; width:22px; z-index: 10;  text-indent:-10001px;}
+.indexVid:hover .indexVidIcon { background-position: 0 -22px; }
+* html .indexVid span  { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src = 'http://www.independent.co.uk/independent.co.uk/editorial/web/styles/images/video/video-med.png', sizingMethod = 'crop') }
+* html .indexVid:hover .indexVidIcon { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src = 'http://www.independent.co.uk/independent.co.uk/editorial/web/styles/images/video/video-med-over.png', sizingMethod = 'crop') }
+ 
+.section-news .news ul li.vidSml { list-style: none; }
+.section-news .news ul li.vidSml  a { background: transparent url(images/video/video-bullett.png) no-repeat 1px 3px; margin-left: -17px; padding-left: 17px; }
+* html .section-news .news ul li.vidSml  a  { zoom: 1; }
+
+/*Top Stories*/
+#latestNews div li.vidSml { list-style: none; }
+#latestNews div li.vidSml a { background: transparent url(images/video/video-bullett.png) no-repeat 1px 3px; margin-left: -17px; padding-left: 17px; }
+* html #latestNews div li.vidSml a { zoom: 1; }
+
+/*Editors Choice*/
+#editorsSlider ul.slides li { position: relative; }
+#editorsSlider ul.slides li .indexVid span { left:13px; top: 13px;  }
+
+/*Section*/
+#topStories.section #mainStory div.photoCaption { position: relative; }
+
+/* Top 25 */
+div.front-news p.image { position: relative;}
+
+/* Sliding Teaser*/
+.slider-entertainment ul.slides li { position: relative; }
+.slider-entertainment ul.slides li.full .vidLrg span { position: absolute; left: 230px; top: 10px; }
+
+/* olympic countdown */
+#olympicCountdown{
+	margin-right:25px;
+}
+
+/* first column partner slider */
+
+#entertainment2 ul.slides li {
+font-size:1.1em;
+}

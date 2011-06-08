@@ -1,0 +1,474 @@
+
+	
+var xmlHttp;
+	var KeyDowncode;
+	var activeDiv="";
+	var activeDivT="";
+	var charCode,DIVLocalCtrl,TxtLocalCtrl;
+var prevScript=null;
+
+function impsrch()
+{
+var strsearch = "/searchresult.cms";
+document.frm1.action=strsearch;
+document.frm1.submit();
+}
+
+function implementsearch1(){
+var searchtext=document.frmsearch1.query.value;
+var x=-1;
+x=document.frmsearch1.search1.value;
+if (searchtext==''){
+alert('Please insert text to search');
+document.frmsearch1.query.focus();
+return false;
+}
+if(x==0){
+if(window.location.href.indexOf("topics")!=-1){
+var strsearch = "/topics.cms?query="+searchtext;
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+} else {
+//var strsearch = "/search.cms";
+var tmps = toTitleCase(searchtext);
+var strsearch = "http://timesofindia.indiatimes.com/topic/"+tmps.replace(/\s+/g,'-');
+//document.frmsearch1.method="get";
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+} 
+}if(x==1){
+var strsearch = "http://search.indiatimes.com/websearch.cms";
+document.frmsearch1.type.value=1;
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+}else if(x==2){
+var strsearch = "http://search.indiatimes.com/websearch.cms";
+document.frmsearch1.type.value=0; 
+document.frmsearch1.action=strsearch; 
+document.frmsearch1.submit();
+}
+else if(x==3){
+//var strsearch = "/videosearchresult.cms";
+var tmps = toTitleCase(searchtext);
+var strsearch = "http://timesofindia.indiatimes.com/topic/"+tmps.replace(/\s+/g,'-')+"/videos";
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+}
+else if(x==4){
+var strsearch = "http://photogallery.indiatimes.com/searchresult.cms";
+document.frmsearch1.Period.value=-1500;
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();}
+return false;
+}
+function beta_valid(){
+	if(document.frmsearch1.query.value==""){
+		alert("Please enter text to search");
+		return false;
+		}
+		else if(window.location.href.indexOf("advancesearch")!=-1){
+		impsrch();return true;
+		}
+		else {
+			opnn=document.getElementById('srchsel').innerHTML;
+			if(opnn=='Video')
+				{
+				document.frmsearch1.searchtype.value="2";
+				document.frmsearch1.article.value="38";
+				}
+		implementsearch1();
+		return true;
+		}
+	}
+
+function showHint(str,DIVCtrl,TxtCtrl,divchk){
+	try {
+		var headID = document.getElementsByTagName("head")[0];		
+		var newScript = document.createElement('script');
+		newScript.type = 'text/javascript';
+		newScript.src = 'http://www.google.com/complete/search?hl=en&js=true&qu=' + str ;		
+		if(prevScript!=null){		
+			headID.removeChild(prevScript);
+			}
+		prevScript=newScript;
+		headID.appendChild(newScript);		
+		}
+		catch(ex){}
+	}
+try {		
+			var google={
+			ac : {		
+			h:function(x){
+			var tmp="";
+			var y="";
+			var ss="";		
+			var len;
+			var txtSuggestedStr	="";
+			y=x;			
+			len=y[1].length;
+			var txtSuggest ="";
+			if(divchk=='tp'){
+			txtSuggest=document.getElementById('txtHint');
+			}
+			else {
+			txtSuggest=document.getElementById('txtHint1');
+			}
+			txtSuggest.innerHTML = '';
+			for(i=0;i<=len-1;i++)
+			{			
+				ss=y[1][i][0];				
+				tmp+=ss+"<br>";									
+			}	
+			var txtSuggestedStr=tmp.split("<br>");
+			for(i=0; i < txtSuggestedStr.length - 1; i++) {
+			var suggest="";
+			if(divchk=='tp'){
+			suggest = '<div id="suggestp' + i +'"  onmouseover="javascript:suggestOver(this);" ';
+			} else {
+			suggest = '<div id="suggest' + i +'"  onmouseover="javascript:suggestOver(this);" ';
+			}			
+			suggest += 'onmouseout="javascript:suggestOut(this);" ';
+			suggest += 'onclick="javascript:setSearch(\''+txtSuggestedStr[i]+'\',divchk);" ';			
+			suggest += 'class="suggest_link">' + txtSuggestedStr[i] +'</div>';			
+		    txtSuggest.innerHTML += suggest;	
+			}
+			
+			if(divchk=='tp'){
+			document.getElementById("txtHint").style.background="#ffffff";
+			document.getElementById("txtHint").style.border="1px solid #bcbcbc";
+			}
+			else {
+			document.getElementById("txtHint1").style.background="#ffffff";
+			document.getElementById("txtHint1").style.border="1px solid #bcbcbc";
+			}
+			if(i>0)
+			   txtSuggest.style.display='inline';
+			else
+			   txtSuggest.style.display='none';
+
+			}
+		}
+	};
+}
+catch(ex){
+}
+//Mouse over function
+	function suggestOver(div_value,atrval) {
+		div_value.className = 'suggest_link_over';
+		if(atrval=="tp"){
+		activeDivT = div_value.id;
+		}
+		else {
+		activeDiv = div_value.id;
+		}		
+	}
+	//Mouse out function
+	function suggestOut(div_value,atrval) {
+		div_value.className = 'suggest_link';
+	}
+function setSearch(xxx,divchk)
+	{	
+	
+		strInputCode = document.getElementById(""+activeDiv).innerHTML;
+		strInputCode = strInputCode.replace(/&(lt|gt);/g, function (strMatch, p1){
+	 	return (p1 == "lt")? "<" : ">";
+	 	});
+	 	var strTagStrippedText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");	
+		document.frmsearch1.query.value = strTagStrippedText;		
+		if(divchk=='tp'){
+			document.getElementById('txtHint').style.display='none';	
+			
+			impsrchtp();
+			return true;
+			}
+			else{
+			document.getElementById('txtHint1').style.display='none';
+			document.frm1.query.value = strTagStrippedText;
+			impsrch();return true;}
+	}
+var divchk="";
+	var strInputCode;	
+	function KeyCheck(e,xxx,atrval){
+		divchk=atrval;
+		var KeyID = window.event ? e.keyCode : e.which;
+		
+		if(atrval=='tp'){	
+			    if(KeyID == 40){    
+			   		if(activeDivT == ""){			
+						var divoverT="";						
+			   			divoverT= document.getElementById("suggestp0");						
+						suggestOver(divoverT,atrval);			
+			   		}else{
+						var divoutT="";
+						var divoverT="";		
+						divoutT = document.getElementById(""+activeDivT);						
+						divoverT= document.getElementById("suggestp"+(parseInt(activeDivT.substring(8,activeDivT.length))+1));						 
+						suggestOut(divoutT,atrval);					
+						suggestOver(divoverT,atrval);
+					}
+	
+			   }else if(KeyID == 38){
+				   	if(activeDivT == ""){
+				   			var divoverT="";						
+				   			divoverT= document.getElementById("suggestp0");						
+							suggestOver(divoverT,atrval);			
+				   		}else{					
+							divoutT = document.getElementById(""+activeDivT);						
+							divoverT= document.getElementById("suggestp"+(parseInt(activeDivT.substring(8,activeDivT.length))-1));
+							suggestOver(divoverT,atrval);
+							suggestOut(divoutT,atrval);	
+						}
+				   }else if(KeyID == 13){
+					   		try{	   
+					   		document.frmsearch1.query.value = document.getElementById(""+activeDivT).innerHTML;
+							strInputCode = document.getElementById(""+activeDivT).innerHTML;
+							}
+							catch(ex){
+							strInputCode=document.frmsearch1.query.value;			
+							}			
+							strInputCode = strInputCode.replace(/&(lt|gt);/g, function (strMatch, p1){
+					 		return (p1 == "lt")? "<" : ">";
+					 		});
+					 		var strTagStrippedText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");					
+							document.frmsearch1.query.value = strTagStrippedText;						
+							if(document.frmsearch1.query.value==""){
+								alert("Please enter text to search");
+								return false;
+							}
+							else {
+								document.getElementById('txtHint').style.display='none';	
+								impsrchtp();
+								return true;
+					   		}
+				   		}					   
+					   else{			  			   
+					   		if(window.location.href.indexOf("advancesearch")!=-1){				
+								document.getElementById('txtHint1').style.display='none';
+								}				
+					   showHint(xxx.value,document.getElementById('txtHint'),xxx,divchk);
+					 }
+		}
+		else {
+		// For Second Input Control
+		if(KeyID == 40){    
+			   		if(activeDiv == ""){			
+						var divover="";						
+						divover= document.getElementById("suggest0");
+						suggestOver(divover,atrval);			
+			   		}else{
+						var divout="";
+						var divover="";		
+						divout = document.getElementById(""+activeDiv);						
+						divover= document.getElementById("suggest"+(parseInt(activeDiv.substring(7,activeDiv.length))+1));
+						suggestOut(divout,atrval);						
+						suggestOver(divover,atrval);
+					}	
+			   }else if(KeyID == 38){
+			   	if(activeDiv == ""){
+			   			var divover="";						
+						divover= document.getElementById("suggest0");
+						suggestOver(divover,atrval);			
+			   		}else{					
+						divout = document.getElementById(""+activeDiv);						
+						divover= document.getElementById("suggest"+(parseInt(activeDiv.substring(7,activeDiv.length))-1));
+						suggestOver(divover,atrval);
+						suggestOut(divout,atrval);	
+					}
+			   }else if(KeyID == 13){
+			   try{	   
+			   		document.frmsearch1.query.value = document.getElementById(""+activeDiv).innerHTML;
+					strInputCode = document.getElementById(""+activeDiv).innerHTML;
+					}
+					catch(ex){
+					strInputCode=document.frmsearch1.query.value;			
+					}			
+					strInputCode = strInputCode.replace(/&(lt|gt);/g, function (strMatch, p1){
+			 		return (p1 == "lt")? "<" : ">";
+			 		});
+			 		var strTagStrippedText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");					
+					document.frmsearch1.query.value = strTagStrippedText;						
+					if(document.frmsearch1.query.value==""){
+					alert("Please enter text to search");
+					return false;
+					}
+					else {
+					document.getElementById('txtHint1').style.display='none';
+					document.frm1.query.value = strTagStrippedText;
+					impsrch();return true;
+					}
+		
+			   }else{
+			    document.getElementById('txtHint').style.display='none';	
+			   	showHint(xxx.value,document.getElementById('txtHint1'),xxx,divchk);
+			   }
+
+		}
+}
+function toTitleCase(str){
+
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+
+}
+function impsrchtp(){
+opnnbot=document.getElementById('srchsel').innerHTML;
+			if(opnnbot=='Video')
+				{
+				document.frmsearch1.searchtype.value="2";
+				document.frmsearch1.article.value="38";
+				}
+					
+var searchtext=document.frmsearch1.query.value;
+var x=-1;
+x=document.frmsearch1.search1.value;
+if (searchtext==''){
+alert('Please insert text to search');
+document.frmsearch1.query.focus();
+return false;
+}
+
+if(x==0){
+if(window.location.href.indexOf("topics")!=-1){
+var strsearch = "/topics.cms?query="+searchtext;
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+} else {
+//var strsearch = "/search.cms";
+var tmps = toTitleCase(searchtext);
+var strsearch = "http://timesofindia.indiatimes.com/topic/"+tmps.replace(/\s+/g,'-');
+//document.frmsearch1.method="get";
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+	} 
+}if(x==1){
+var strsearch = "http://search.indiatimes.com/websearch.cms";
+document.frmsearch1.type.value=1;
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+}else if(x==2){
+var strsearch = "http://search.indiatimes.com/websearch.cms";
+document.frmsearch1.type.value=0; 
+document.frmsearch1.action=strsearch; 
+document.frmsearch1.submit();
+}
+else if(x==3){
+//var strsearch = "/videosearchresult.cms";
+var tmps = toTitleCase(searchtext);
+var strsearch = "http://timesofindia.indiatimes.com/topic/"+tmps.replace(/\s+/g,'-')+"/videos";
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();
+}
+else if(x==4){
+var strsearch = "http://photogallery.indiatimes.com/searchresult.cms";
+document.frmsearch1.Period.value=-1500;
+document.frmsearch1.action=strsearch;
+document.frmsearch1.submit();}
+return false;
+}
+
+
+function openSelect9(obj){
+try{
+
+	inputs = document.getElementById("srchcmb9");	
+		active = document.getElementById("srchsel9");
+		active = document.getElementById("srchse9");
+		if(obj=='srchcmb9'){
+if(inputs.style.display=="block")
+{
+	inputs.style.display="none";
+	inputs.style.visibility="hidden";
+}
+
+else
+{
+	inputs.style.display="block";
+	inputs.style.visibility="visible";
+}
+
+		}else{
+			textnode = document.getElementById(obj).innerHTML;		
+			active.innerHTML=textnode;
+			inputs.style.display="none";
+			inputs.style.visibility="hidden";
+			document.frmsearch4.search1.value=obj;
+			}
+}
+catch(ex){}
+}
+ function make_blank2(){document.frmsearch4.query.value ="";}
+function beta_impsrch_bot()
+{
+var strsearch = "/searchresult.cms";
+document.frm1.action=strsearch;
+document.frm1.submit();
+}
+function beta_implementsearch1_bot(){
+var searchtext=document.frmsearch4.query.value;
+var x=-1;
+x=document.frmsearch4.search1.value;
+if (searchtext==''){
+alert('Please insert text to search');
+document.frmsearch4.query.focus();
+return false;
+}
+if(x==0){
+if(window.location.href.indexOf("topics")!=-1){
+var strsearch = "/topics.cms?query="+searchtext;
+document.frmsearch4.action=strsearch;
+document.frmsearch4.submit();
+} else {
+//var strsearch = "/search.cms";
+var tmps = toTitleCase(searchtext);
+var strsearch = "http://timesofindia.indiatimes.com/topic/"+tmps.replace(/\s+/g,'-');
+document.frmsearch4.action=strsearch;
+document.frmsearch4.submit();
+} 
+}if(x==1){
+var strsearch = "http://search.indiatimes.com/websearch.cms";
+document.frmsearch4.type.value=1;
+document.frmsearch4.action=strsearch;
+document.frmsearch4.submit();
+}else if(x==2){
+var strsearch = "http://search.indiatimes.com/websearch.cms";
+document.frmsearch4.type.value=0; 
+document.frmsearch4.action=strsearch; 
+document.frmsearch4.submit();
+}
+else if(x==3){
+//var strsearch = "/videosearchresult.cms";
+var tmps = toTitleCase(searchtext);
+var strsearch = "http://timesofindia.indiatimes.com/topic/"+tmps.replace(/\s+/g,'-')+"/videos";
+document.frmsearch4.action=strsearch;
+document.frmsearch4.submit();
+}
+else if(x==4){
+var strsearch = "http://photogallery.indiatimes.com/searchresult.cms";
+document.frmsearch4.Period.value=-1500;
+document.frmsearch4.action=strsearch;
+document.frmsearch4.submit();}
+return false;
+}
+
+function beta_valid_bot(){
+	if(document.frmsearch4.query.value==""){
+		alert("Please enter text to search");
+		return false;
+		}
+		else if(window.location.href.indexOf("advancesearch")!=-1){
+		beta_impsrch_bot();return true;
+		}
+		else {
+		opnnbot=document.getElementById('srchse9').innerHTML;
+			if(opnnbot=='Video')
+				{
+				document.frmsearch4.searchtype.value="2";
+				document.frmsearch4.article.value="38";
+				}
+		beta_implementsearch1_bot();
+		return true;
+		}
+	}
+function make_blank3(){document.frm1.query.value ="";}
+				
+	
+	 

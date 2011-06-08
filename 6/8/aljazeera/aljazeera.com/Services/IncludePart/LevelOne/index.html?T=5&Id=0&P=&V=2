@@ -1,0 +1,26 @@
+<link href="../../../Styles/Menu.css" rel="stylesheet" type="text/css" />
+<link href="../../../Styles/Templates2.css" rel="stylesheet" type="text/css" />
+<div id="ctl00_dvProgSchedule">
+    <span class="indexSummayText">
+        Now </span><br />
+    <span>
+        <span id="ctl00_lblNow" class="indexText-Bold2 indexText-Font2">The Stream  : Challenging Mainstream Media in Palestine</span></span>
+    <div style="height: 5px;">
+        <!-- -->
+    </div>
+    <span cssclass="indexSummaryText">
+        Next 
+        <span id="ctl00_lblNextMins">(In 17 mins ) </span></span><br />
+    <span>
+        <span id="ctl00_lblNext" class="indexText-Bold2 indexText-Font2"> Witness : La Americana</span></span>
+</div>
+<div style="height: 10px; clear: both;">
+    <!---->
+</div>
+<div class="TodaySchedule">
+    <a id="lnkDetails" style="decoration: none" href="http://aljazeera.com/Services/Schedule/ProgramSchedule.aspx">
+        Today's Schedule</a></div>
+<div style="height: 20px; clear: both;">
+    <!---->
+</div>
+ <!-- PAGELOADEDSUCCESSFULLY-->

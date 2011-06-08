@@ -1,0 +1,70 @@
+<html>
+<body marginheight=0 marginwidth=0 topmargin=0 leftmargin=0>
+<!--  begin ad tag: aljazeera_EN/africa  (468x60) -->
+<script language="JavaScript" type="text/javascript">
+
+var str = window.parent.location.pathname.toLowerCase(); 
+
+var eu = '/doubleclick/europe';
+var af = '/news/africa';
+var me = '/news/middleeast';
+var am = '/news/americas';
+var ap = '/news/asia-pacific';
+var as = '/news/asia';
+var fo = '/focus';
+var bz = '/business';
+var sp = '/sport';
+var pr = '/programmes';
+var we = '/weather';
+var yw = '/your_views';
+var se = '/services/search';
+var au = '/aboutus';
+var wn = 'watch_now';
+
+var section = '';
+
+if(str.indexOf(eu,0)>-1){
+	section='europe';
+} else if(str.indexOf(af,0)>-1){
+	section = 'africa';
+} else if(str.indexOf(me,0)>-1){
+	section = 'middleeast';
+} else if(str.indexOf(am,0)>-1){
+	section = 'americas';
+} else if(str.indexOf(ap,0)>-1){
+	section = 'asia-pacific';
+} else if(str.indexOf(as,0)>-1){
+	section = 'asia';
+} else if(str.indexOf(fo,0)>-1){
+	section = 'focus';
+} else if(str.indexOf(bz,0)>-1){
+	section = 'business';
+} else if(str.indexOf(sp,0)>-1){
+	section = 'sport';
+} else if(str.indexOf(pr,0)>-1){
+	section = 'programmes';
+} else if(str.indexOf(we,0)>-1){
+	section = 'weather';
+} else if(str.indexOf(yw,0)>-1){
+	section = 'your_views';
+} else if(str.indexOf(se,0)>-1){
+	section = 'search';
+} else if(str.indexOf(au,0)>-1){
+	section = 'aboutus';
+} else if(str.indexOf(wn,0)>-1){
+	section = 'watch_now';
+}
+
+ord = (typeof(ord)!='undefined') ? ord : Math.random()*10000000000000000;
+document.write('<scr'+'ipt language="JavaScript" src="http://ad.ae.doubleclick.net/adj/aljazeera_EN/'+section+';sz=468x60;ord='+ord+'?" type="text/javascript"></scr'+'ipt>');
+</script>
+<noscript>
+<a href="http://ad.ae.doubleclick.net/jump/aljazeera_EN/;ord=123456789?" target="_blank"><img src="http://ad.ae.doubleclick.net/ad/aljazeera_EN/;ord=123456789?" width="" height="" border="0" alt=""></a>
+</noscript>
+<!-- End ad tag -->
+</body>
+</html>
+
+
+
+

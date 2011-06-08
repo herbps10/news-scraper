@@ -1,0 +1,158 @@
+/********************************************************************************/
+/* Main Article */
+/********************************************************************************/
+.jp-hp-mainarticle-single
+{
+}
+.jp-hp-mainarticle-double
+{
+}
+.jp-hp-mainarticle-double li
+{
+    float: left;
+    display: inline-block;
+    width: 370px;
+}
+.jp-hp-mainarticle-double li.first
+{
+    margin-right: 10px;
+}
+.jp-hp-mainarticle-single li fieldset,
+.jp-hp-mainarticle-double li fieldset
+{
+}
+.jp-hp-mainarticle-single li fieldset a,
+.jp-hp-mainarticle-double li fieldset a
+{
+	text-decoration: none;
+}
+.jp-hp-mainarticle-single .jp-hp-mainarticle-picture
+{
+}
+.jp-hp-mainarticle-double .jp-hp-mainarticle-picture
+{
+}
+.jp-hp-mainarticle-picture
+{
+	margin-right: 6px;
+	margin-bottom: 10px;
+	float: right;
+}
+.jp-hp-mainarticle-picture-dsc
+{
+background-color:#161112;
+color:#FFFFFF;
+font-family:Arial;
+font-size:12px;
+height:18px;
+padding:5px;
+width:269px;
+line-height:19px;
+}
+.jp-hp-mainarticle-title
+{
+    font-size: 20px;
+    line-height: 1em;
+    font-family: arial;
+	margin-bottom:10px;
+	background-color:none;
+	width:410px;
+	margin-left:10px;
+	float:left;
+}
+.jp-hp-mainarticle-title a
+{
+	background-color:#F6F5F5;
+}
+.jp-hp-mainarticle-single .jp-hp-mainarticle-title
+{
+    font-size: 26px;
+}
+.jp-hp-mainarticle-title a,
+.jp-hp-mainarticle-single .jp-hp-mainarticle-title a
+{
+	color: #191919;
+	line-height:35px
+}
+
+.jp-hp-mainarticle-content
+{
+    float:left;
+    line-height:18px;
+    width:410px;
+    /*margin-top: 10px;*/
+    font-size:16px;
+    margin-left:10px;
+    /*margin-bottom:10px;*/
+}
+.jp-hp-mainarticle-related
+{
+    float:left;
+    line-height:20px !important;
+    width:410px;
+    font-size:12px;
+    margin-left:10px;
+    margin-bottom:10px;
+}
+.jp-hp-mainarticle-related-item{
+    font-size:12px;
+}
+.jp-hp-mainarticle-related-item a
+{
+   color:#3a5fab;
+}
+.jp-hp-mainarticle-related a 
+{
+   color:#609BCB;
+}
+.jp-hp-mainarticle-related img ,.jp-hp-mainarticle-related-item img
+{
+  margin-right:6px; 
+}
+
+.jp-hp-mainarticle-content,
+.jp-hp-mainarticle-content a
+{
+	color:#000000;
+}
+/*.jp-hp-mainarticle-writer
+{
+	font-size: 10px;
+	color: #5b5b5b;
+}
+.jp-hp-mainarticle-comments
+{
+	float: right;
+	background: url(../../Images/comment_icon.gif) no-repeat left;
+	padding-left: 20px;
+	color: #163e59;
+}
+.jp-hp-mainarticle-comments span
+{
+	color: #63050c;
+}
+.jp-hp-mainarticle-date
+{
+	font-size: 9px;
+	color: #5b5b5b;
+}*/
+/********************************************************************************/
+
+/********************************************************************************/
+/* Blogers */
+/********************************************************************************/
+.jp-hp-blogers
+{
+    width: 100%;
+}
+.jp-hp-blogers-left
+{
+    float: left;
+    width: 49%;
+}
+.jp-hp-blogers-right
+{
+    float: right;
+    width: 50%;
+}
+/********************************************************************************/

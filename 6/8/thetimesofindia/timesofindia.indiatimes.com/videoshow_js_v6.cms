@@ -1,0 +1,507 @@
+		
+		var skp=false;
+function getMovieName(movieName){if (navigator.appName.indexOf("Microsoft") != -1){return window[movieName]}else {return document[movieName]}}
+function callVideo(){getMovieName("myMovie").startVideo();}
+function _uFlash(){var f="-",n=navigator;if(n.plugins && n.plugins.length){for(var ii=0;ii<n.plugins.length;ii++){if(n.plugins[ii].name.indexOf('Shockwave Flash')!=-1){f=n.plugins[ii].description.split('Shockwave Flash ')[1];break;}}}else if(window.ActiveXObject){for(var ii=10;ii>=2;ii--){try{var fl=eval("new ActiveXObject('ShockwaveFlash.ShockwaveFlash."+ii+"');");if(fl){f=ii + '.0';break;}}catch(e){}}}return f;}
+function showexternalads(ifr_url){if(skp){return;}
+	if (_uFlash() != "-"){		
+		document.getElementById("preRollDiv").innerHTML=''+ifr_url;
+		document.getElementById('preRollDiv').style.display='inline-block';
+		document.getElementById('preRollDiv').style.position='absolute';		
+	}		
+	setTimeout("document.getElementById('preRollDiv').style.display='none';document.getElementById('preRollDiv').style.top='0px';document.getElementById('preRollDiv').style.left='0px';document.getElementById('preRollDiv').innerHTML='';document.getElementById('objcont').style.zIndex='0';callVideo();",12000)
+}
+function skipad(){
+skp = true;
+document.getElementById('preRollDiv').style.display='none';document.getElementById('preRollDiv').style.top='0px';document.getElementById('preRollDiv').style.left='0px';document.getElementById('objcont').style.zIndex="0"; document.getElementById('preRollDiv').innerHTML='';callVideo();
+skp = false;
+}
+
+function displayNSCompanionAds(par){	
+			var cb_str = new Array();
+			var cb_str=par.split(",");			
+			document.getElementById("cb_medrect1_div").innerHTML = "<div id='dvCmp'><a href='"+cb_str[2]+"' target='_blank'/><img src='"+cb_str[1]+"' width='300' height='250' border='0' /></div>";			
+			}
+
+
+//Added
+function showdivlayeroffvid(msid,dividstatus,sts){
+																		
+	
+	if(dividstatus=='savedat'){
+		if ((cookiestring.indexOf('commlogp') != -1) && (sUserLength > 0)  && (mstatus1 == 'true')){
+		
+			var popupurl1='/videoinsertclipping/msid-'+msid+',random-'+ inRandom +',mas_msid-'+secmsid +'.cms';							
+			//document.getElementById(dividstatus).style.display="inline";
+			//document.getElementById('b').style.display="none";
+																
+			populatediv(popupurl1,dividstatus);					
+		}else{
+		SetCookie_toi('tabs'+msid,dividstatus);
+			try{
+				findpos = getCookievalue1('arc');
+				findposLength = findpos.length;
+			}catch(er){
+				findposLength =0;
+			}
+			if((findpos != '0') && (findposLength > 1)){
+				document.cookie = 'arc=0';
+			}else{
+				document.cookie = 'arc=' + escape(msid);
+			}
+				
+			
+			if(document.all)
+			{	
+			document.getElementById("savedat").style.border="0px solid #CCCCCC";
+			document.getElementById("savedata").style.borderBottom="1px solid #CCCCCC";document.getElementById("savedata").style.borderRight="1px solid #CCCCCC";document.getElementById("savedata").style.borderLeft="1px solid #CCCCCC";document.getElementById("savedata").style.margin="0px 0px 0px -80px";
+			}
+			else{
+			document.getElementById("savedat").style.borderLeft="1px solid #CCCCCC";
+			document.getElementById("savedat").style.borderRight="1px solid #CCCCCC";
+			document.getElementById("savedat").style.borderBottom="1px solid #CCCCCC";
+			document.getElementById("savedata").style.border="0px solid #ffffff";
+			document.getElementById("savedata").style.margin="0px 0px 0px -100px";
+			}			
+		}
+	}else{
+		if ((cookiestring.indexOf('commlogp') != -1) && (sUserLength > 0)  && (mstatus1 == 'true')){
+				
+				var popupurl1='/videoinsertclipping/msid-'+msid+',random-'+ inRandom +'.cms';
+				//document.getElementById(dividstatus).style.display="inline";
+				//document.getElementById('t').style.display="none";
+				populatediv(popupurl1,dividstatus);
+		}else{
+		SetCookie_toi('tabs'+msid,dividstatus);
+			try{
+				findpos = getCookievalue1('arc');
+				findposLength = findpos.length;
+			}catch(er){
+				findposLength =0;
+			}
+			if((findpos != '0') && (findposLength > 1)){
+				document.cookie = 'arc=0';
+			}else{
+				document.cookie = 'arc=' + escape(msid);
+			}
+			
+		}
+	}
+}
+
+
+
+function defload1vid(){
+	
+	if ((cookiestring.indexOf('commlogp') != -1) && (sUserLength > 0)  && (mstatus1 == 'true'))
+	{	
+		
+		
+		try{
+			findpos = getCookievalue1('tabs'+navmsid);
+			findposLength = findpos.length;
+		}catch(er){
+			findposLength =0;
+		}
+		
+		if((findpos  != '0') && (findposLength > 1))
+		{	
+			var pos_xx = GetCookie_toi("tabs"+navmsid);	
+			
+			SetCookie_toi('tabs'+navmsid,'');						
+			if(pos_xx == "savedat")
+			{
+			contenttab11vid('save#more#email')
+			showdivlayeroffvid(navmsid,'savedat','close');
+				
+			}else{contenttab11vid('save1#email1')
+			showdivlayeroffvid(navmsid,'save1dat','close');}
+			
+		}
+		
+		document.cookie = 'arc=0';	
+	}
+}
+
+
+function contenttab11vid(divid)
+																{
+																
+																var arr=new Array();
+																	arr=divid.split('#');
+																	var arrlen = arr.length-1;
+																	var i;
+																	
+																	for(i=arrlen;i>=0;i--)
+																		{
+																		
+																			if(i == 0){
+																				if(arr[i]=='more')
+																				{
+																					var versionchk = getInternetExplorerVersion();
+																					if(versionchk <= 6 && versionchk > 1){document.getElementById(arr[i]+"data").style.margin="5px 0px 0px -247px";}
+																					else if(document.all)
+																					{document.getElementById(arr[i]+"data").style.margin="0px 0px 0px -247px";document.getElementById(arr[i]).style.height="23px";document.getElementById(arr[i]).style.width="53px";}																				
+																					else
+																					{document.getElementById(arr[i]+"data").style.margin="0px 0px 0px -247px";document.getElementById(arr[i]).style.height="21px";}
+																					if																					
+																					(arr[i]=='more'){document.getElementById(arr[i]+"iframe").src="/more_vid.cms";}
+																				}
+																				else if(arr[i]=='email' || arr[i]=='save')
+																				{
+																				
+																				if(document.all)
+																					{document.getElementById(arr[i]+"dat").style.border="0px solid #CCCCCC";
+																					document.getElementById(arr[i]+"data").style.borderBottom="0px solid #CCCCCC";document.getElementById(arr[i]+"data").style.borderRight="0px solid #CCCCCC";document.getElementById(arr[i]+"data").style.borderLeft="0px solid #CCCCCC";document.getElementById(arr[i]+"data").style.margin="1px 0px 0px -200px";}
+																					else{
+																					document.getElementById(arr[i]+"dat").style.borderLeft="1px solid #CCCCCC";
+																					document.getElementById(arr[i]+"dat").style.borderRight="1px solid #CCCCCC";
+																					document.getElementById(arr[i]+"dat").style.borderBottom="1px solid #CCCCCC";
+																					document.getElementById(arr[i]+"data").style.border="0px solid #ffffff";
+																					document.getElementById(arr[i]+"data").style.margin="1px 0px 0px -200px";
+																					}
+																					if(arr[i]=='email'){document.getElementById(arr[i]+"iframe").src="/new_videomail/"+navmsid+".cms";}	
+																					else if(arr[i]=='save'){document.getElementById(arr[i]+"iframe").src="/save_vid.cms";}																				
+																				}
+																				else
+																				{
+																					if(arr[i]=='email1'){
+																				document.getElementById(arr[i]+"iframe").src="/new_videomail/"+navmsid+".cms";}
+
+																				document.getElementById(arr[i]+"data").style.margin="0px 0px 0px 0px";
+																				
+																				document.getElementById(arr[i]).style.height="25px";
+																				}
+																				document.getElementById(arr[i]).className="current";
+																				document.getElementById(arr[i]+"data").className="divshow";	
+																			}
+																			else
+																			{document.getElementById(arr[i]).className="";
+																			document.getElementById(arr[i]+"data").className="divhide";	}}}
+																dividd="email#save#more";
+																function disableone11()
+																{																
+																	var arrdiv=new Array();
+																	arrdiv=dividd.split('#');
+																	var arrlena = arrdiv.length-1;
+																	var i;
+																	for(i=arrlena;i>=0;i--)
+																		{var objaa = document.getElementById(arrdiv[i]+"data");
+																			var objaa1 = document.getElementById(arrdiv[i]);		
+																			document.getElementById(arrdiv[i]+"data").className="divhide";	
+																			document.getElementById(arrdiv[i]).className="";}}
+																dividd1="email#save#more";
+																function disableall(e)
+																{
+																var target = (e && e.target) || (event && event.srcElement);
+																
+																	var arrdiv1=new Array();
+																	arrdiv1=dividd1.split('#');
+																	var arrlena1 = arrdiv1.length-1;
+																	var i;
+																	for(i=arrlena1;i>=0;i--)
+																		{
+																			var obje = document.getElementById(arrdiv1[i]+"data");
+																			var obje1 = document.getElementById(arrdiv1[i]);
+																			var obje2 = document.getElementById(arrdiv1[i]+"img");
+																			var obje3 = document.getElementById(arrdiv1[i]+"dat");
+																			if(target.id!=obje.id)
+																				{
+																					if(target.id!=obje1.id)
+																					{
+																						if(target.id!=obje2.id)
+																						{
+																							if(target.id!=obje3.id)
+																							{	
+																							document.getElementById(arrdiv1[i]).className="";
+																							document.getElementById(arrdiv1[i]+"data").className="divhide";	
+																							}
+																						}
+																					}
+																				}
+																			
+																			
+																		}
+																}
+																function GetCookie_toi(sName){
+	var aCookie = document.cookie.split("; ");
+	for (var i=0; i < aCookie.length; i++){ 
+		var aCrumb = aCookie[i].split("=");
+		if (sName == aCrumb[0])
+	      return unescape(aCrumb[1]);
+	}
+	return null;
+}	
+
+
+function SetCookie_toi(sName,sValue){document.cookie = sName + "=" + escape(sValue);
+}
+
+function tagThisComment(msdid,type,ob,val){
+	var status = GetColorCookie("msgid"+msdid);
+	if(status==null){
+		status="";
+	}	
+	if((status.indexOf('100')!=-1 || status.indexOf('101')!=-1)&&(type=='100' || type=='101')){
+		alert("You've already voted!");
+	}else if(status.indexOf('103')!=-1 && type=='103'){
+		alert("You've already marked this comment as Abusive!");	
+	}else if((status.indexOf('102')!=-1 || status.indexOf('103')!=-1)&&(type=='102' || type=='103')){
+		alert("You just Recommended this comment!");
+	}else if(status.indexOf('102')==-1 && type=='103'){
+		showOffBox(msdid,msgparent);		
+	}else{		
+		var u_rl = "/ratecomment_new.cms?opinionid="+ msdid +"&typeid="+ type +"&rateid=1";
+		if(status != null){
+			setColorCookie("msgid"+msdid,status+"_"+type,1);
+		}		
+		document.getElementById(ob).className=document.getElementById(ob).className+"done";		
+		populate_wf(u_rl,"result","no","tagingDone("+ob+","+type+","+val+")");
+		tagingDone(ob,type,val);
+	}
+}
+
+function tagingDone(ob,type,val){
+	var obj = document.getElementById(ob);
+	switch(type){
+		case '100':obj.innerHTML="Agree ("+(val+1)+")";break;
+		case '101':obj.innerHTML="Disagree ("+(val+1)+")";break;
+		case '102':obj.innerHTML="Recommend ("+(val+1)+")";break;		
+	}
+}
+
+function showOffBox(msgid,msid){
+	document.getElementById("abusiveCommentDiv").style.display="block";
+	document.getElementById("abusiveCommentSecondDiv").style.display="none";	
+	document.getElementById("reportAbuseDiv").style.display="block";
+	document.getElementById("ofusername").value="";
+	document.getElementById("ofreason").value="";
+	document.getElementById("ofcommenteroid").value=msgid;
+	document.getElementById("ofcommentid").value=msid;
+}
+function closeAbusiveDivForm(){
+	document.getElementById("reportAbuseDiv").style.display="none";
+	document.getElementById("abusiveCommentDiv").style.display="block";
+	document.getElementById("abusiveCommentSecondDiv").style.display="none";	
+}
+
+function populatediv1(urlval,divval){
+				
+try{
+
+var xmlhttp=false;
+var status=0;
+//CHECKING VALUE OF xmlhttp IS TRUE
+var str_temp = '<table cellpadding="0" cellspacing="0" width="100%" height="100">';
+str_temp = str_temp + '<tr><td valign="middle" align="center"><font face="Arial" size="2" color="#242424">	<b>Loading</b></font>';
+str_temp = str_temp + '<img border="0" src="/photo.cms?msid=1748421" hspace="5"></td></tr></table>';
+//document.getElementById(divval).innerHTML = str_temp;
+xmlhttp = window.XMLHttpRequest?new XMLHttpRequest():
+new ActiveXObject("Microsoft.XMLHTTP");
+if (xmlhttp){
+//checking the state of http object
+xmlhttp.onreadystatechange=function(){
+if (xmlhttp.readyState==4){
+if (xmlhttp.status==200){
+//document.getElementById(divval).innerHTML=xmlhttp.responseText;
+var resultset="";
+resultset=xmlhttp.responseText;
+document.getElementById("abusiveCommentDiv").style.display="none";
+document.getElementById("abusiveCommentSecondDiv").style.display="block";	
+}
+else if (xmlhttp.status==404) status=0
+else status=0}}
+xmlhttp.open("GET",urlval,true);
+xmlhttp.send(null);
+//show(divval);
+}}
+catch (e){
+xmlhttp = false;}}
+
+
+function sethourCookie(name,value,hour){
+
+		if(hour){
+
+			var date=new Date()
+			
+				date.setTime(date.getTime()+(hour*1*60*60*1000))
+
+
+			var expires="; expires="+date.toGMTString()
+
+		}else var expires=""
+
+		document.cookie=name+"="+value+expires+"; path=/"	
+
+	}		
+
+function radioclear()
+					{
+					document.abuseForm.ofreasonradio[0].checked=false;document.abuseForm.ofreasonradio[1].checked=false;document.abuseForm.ofreasonradio[2].checked=false;document.abuseForm.ofreasonradio[3].checked=false;
+					}
+					function showradiolayer(status)
+					{
+					if(status==0){document.getElementById('offensiveotherdiv').style.display="none";}
+					else {document.abuseForm.offensiveother.value="";document.getElementById('offensiveotherdiv').style.display="block";}
+					}
+						
+					function SubmitAbuse(objid){	
+
+	if(document.abuseForm.ofusername.value=="")
+
+	{
+
+	alert ("Please Enter Your Name");
+	document.abuseForm.ofusername.focus;
+	return false;
+
+	}
+	var notsel=0;
+	var otherradio=0;
+
+	for(var i = 0; i < document.abuseForm.ofreasonradio.length; i++) {
+		if(document.abuseForm.ofreasonradio[i].checked)
+		{notsel=1;document.abuseForm.ofreason.value=document.abuseForm.ofreasonradio[i].value;
+		otherradio = document.abuseForm.ofreason.value;
+		
+		}
+	}
+	
+	if(notsel==0){
+	alert ("Please Select your Reason");	
+	return false;}
+	if (otherradio=="Others")
+	{
+		
+		if (document.abuseForm.offensiveother.value=="")
+		{
+			alert("Please Enter your Other Reason");
+			return false;
+		}
+		else 
+		{
+		document.abuseForm.ofreason.value="Others" + ": " + document.abuseForm.offensiveother.value;
+		}
+
+
+	}
+
+	var formObj = document.getElementById(objid);
+
+	var c_msid=formObj.ofcommenteroid.value;	
+
+	var status = GetColorCookie("msgid"+c_msid);
+
+	if(status==null){
+
+		status="";
+
+	}
+
+
+
+     var offensiveval = GetColorCookie('offensivemax');	
+
+	if(offensiveval!=null || offensiveval!=undefined)
+
+	{		
+
+		var getoffensivemaxval=GetColorCookie("offensivemax");		
+
+		getoffensivemaxval=parseFloat(getoffensivemaxval);			
+
+		getoffensivemaxval=getoffensivemaxval+1;		
+
+		if(getoffensivemaxval==9)
+
+			{
+
+				alert("Sorry, this service is currently not available. Please try later.");return;
+
+			}
+
+		else
+
+			{
+
+				sethourCookie("offensivemax",getoffensivemaxval,1);
+
+			}
+
+	}
+
+	else
+
+	{	
+
+		sethourCookie("offensivemax",1,1);
+
+		
+
+	}
+
+
+
+	setColorCookie("msgid"+c_msid,status+"_103",1);
+
+	var urlval = "http://timesofindia.indiatimes.com/offensiveService/offence.asmx/getOffencivecomment?ofusername=" + formObj.ofusername.value + "&ofreason="+ formObj.ofreason.value +"&ofcommenteroid="+formObj.ofcommenteroid.value + "&ofcommenthostid="+formObj.ofcommenthostid.value+"&ofcommentchannelid=" + formObj.ofcommentchannelid.value+"&ofuseremail="+formObj.ofuseremail.value+"&ofcommentid="+formObj.ofcommentid.value;
+
+	document.getElementById('abusiveCommentDiv').style.display="none";
+
+	document.getElementById('abusiveCommentSecondDiv').style.display="block";		
+
+	
+
+	populatediv1(urlval,"result");
+
+	var u_rl = "/ratecomment_new.cms?opinionid="+ formObj.ofcommenteroid.value +"&typeid=103&rateid=1";	
+
+	document.getElementById("op1_"+c_msid).parentNode.innerHTML="<img src='/photo/5878111.cms' width='110' height='95'>";
+
+	populatediv1(u_rl,"result");
+
+}
+		
+function f_filterResults(n_win, n_docel, n_body) {
+	var n_result = n_win ? n_win : 0;
+	if (n_docel && (!n_result || (n_result > n_docel)))
+		n_result = n_docel;
+	return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+}
+function f_scrollTop() {
+	return f_filterResults (
+		window.pageYOffset ? window.pageYOffset : 0,
+		document.documentElement ? document.documentElement.scrollTop : 0,
+		document.body ? document.body.scrollTop : 0
+	);
+}
+
+function setabuseForm(){	
+
+	_obj.style.top = y + f_scrollTop()+"px";
+	//scrollingDetector();
+}
+function createDiv2()
+		{				
+			if(iiifor1>totcounta)
+			{
+				document.getElementById('commentclicklayer').style.display="none";
+			}
+			else
+			{
+			
+			
+			var nifor = document.getElementById('cmtMainBox');				
+            var divTaga = document.createElement("div");			
+          	var divname="cmtBox1"+iiifor1;		
+          	  divTaga.id = divname;
+				nifor.appendChild(divTaga);				
+				urlpopulate='/new_opinionsdata_test/'+ navmsid +'.cms?curpg='+iiifor1;										
+				populateuntil(urlpopulate,divname,"yes");			
+			iiifor1++;
+				
+			
+			}
+		}	
+ 

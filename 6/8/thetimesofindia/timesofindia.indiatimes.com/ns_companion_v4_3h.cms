@@ -1,0 +1,533 @@
+
+var skp = false;
+var nsc_HTMLSource, nsc_SwfUrl, nsc_ImageUrl, nsc_ClickUrl, nsc_height, nsc_width, nsc_adType, nsc_floatType;
+var nscObjOverLap, nscObjSlider, nscObjScroller, divRemove;
+var phSlider = true;
+var phScroller = true;
+var nscOldHtml = '';
+var nscDivId = ["nsc_CompOverLap", "nsc_CompSlider", "nsc_CompScroller"];
+var nsc_DivId;
+var nsc_tempParams, nsc_ScrollReplay;
+var frstPlay = 0;
+var nsc_track, nsc_roll, nsc_shagn, nsc_crid, nsc_fixed;
+
+function URLDecode(encodedString) {
+    var output = encodedString;
+    var binVal, thisString;
+    var myregexp = /(%[^%]{2})/;
+    while ((match = myregexp.exec(output)) != null && match.length > 1 && match[1] != '') {
+        binVal = parseInt(match[1].substr(1), 16);
+        thisString = String.fromCharCode(binVal);
+        output = output.replace(match[1], thisString);
+    }
+    return output;
+}
+
+function CompRemoveElem(objDiv) {
+    try {
+        var nsc_adElem = ["div", "span", "iframe", "a", "object"];
+        for (i = 0; i < nsc_adElem.length; i++) {
+            nsc_oldElems = objDiv.getElementsByTagName(nsc_adElem[i]);
+            if (nsc_oldElems.length > 0) {
+                for (j = 0; j < nsc_oldElems.length;) {
+                    try {
+                        objDiv.removeChild(nsc_oldElems[j]);
+                    } catch (e) {}
+                }
+            }
+        }
+        objDiv.style.height = '0px';
+        objDiv.style.width = '0px';
+    } catch (e) {}
+}
+
+function NSCreateAd(nsc_params, nsc_CompDiv, nsc_DivId) {
+    try {
+        nsc_width = nsc_params.width ? nsc_params.width : 300;
+        nsc_height = nsc_params.height ? nsc_params.height : 250;
+        nsc_HTMLSource = nsc_params.HTMLSource ? nsc_params.HTMLSource : '';
+        nsc_SwfUrl = nsc_params.SwfUrl ? nsc_params.SwfUrl : '';
+        nsc_ImageUrl = nsc_params.ImageUrl ? nsc_params.ImageUrl : '';
+        nsc_ClickUrl = nsc_params.ClickUrl ? nsc_params.ClickUrl : '';
+        nsc_floatType = nsc_params.floatType ? nsc_params.floatType : 0;
+        if (nsc_HTMLSource != '') {
+            if (document.getElementById(nsc_DivId)) {
+                var div = document.getElementById(nsc_DivId);
+            } else {
+                var div = document.createElement("div");
+                div.id = nsc_DivId;
+            }
+            var divObj = document.createElement("div");
+            divObj.id = "nsc_CrObj";
+            var iframe = document.createElement("iframe");
+            iframe.style.width = nsc_width + "px";
+            iframe.style.height = nsc_height + "px";
+            iframe.style.border = "0";
+            iframe.scrolling = "no";
+            iframe.marginWidth = "0";
+            iframe.marginHeight = "0";
+            iframe.frameBorder = "no";
+            iframe.src = nsc_HTMLSource;
+            divObj.appendChild(iframe);
+            div.appendChild(divObj);
+            return div;
+        } else if (nsc_SwfUrl != '') {
+            var limStr = '<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" ';
+            if ((nsc_adType == 1)) {
+                limStr += 'WIDTH="' + nsc_width + '" HEIGHT="' + nsc_height + '" ';
+            } else {
+                limStr += 'WIDTH="100%" HEIGHT="100%" ';
+            }
+            limStr += 'CODEBASE="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" type="application/x-shockwave-flash" ID="nsc_CrObj">';
+            limStr += '<PARAM NAME="MOVIE" VALUE="' + nsc_SwfUrl + '"><PARAM NAME="ID" VALUE="nsc_CrObj" /><PARAM NAME="wmode" VALUE="transparent" /><PARAM NAME="QUALITY" VALUE="high" /><PARAM NAME="SCALE" VALUE="SHOWALL" /><param name="allowScriptAccess" value="always" /><PARAM NAME="FlashVars" VALUE="clickTag=' + escape(nsc_ClickUrl) + '" id="FVClickTag" /><EMBED NAME="nsc_CrObj" SRC="' + nsc_SwfUrl;
+            if ((nsc_adType == 1) || ((nsc_adType == 3) && (navigator.userAgent.toLowerCase().indexOf('firefox') != -1))) {
+                limStr += '" WIDTH="' + nsc_width + '" HEIGHT="' + nsc_height + '"';
+            } else {
+                limStr += '" WIDTH="100%" HEIGHT="100%"';
+            }
+            limStr += ' QUALITY="high" type="application/x-shockwave-flash" SCALE="SHOWALL" allowScriptAccess="always" swLiveConnect="true" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" wmode="transparent" FlashVars="clickTag=' + escape(nsc_ClickUrl) + '"></EMBED></OBJECT>';
+            if (nsc_adType == 3) {
+                return limStr;
+            } else {
+                if (document.getElementById(nsc_DivId)) {
+                    div = document.getElementById(nsc_DivId);
+                } else {
+                    var div = document.createElement("div");
+                    div.id = nsc_DivId;
+                }
+                div.style.width = nsc_width;
+                div.style.height = nsc_height;
+                div.innerHTML = limStr;
+                return div;
+            }
+        } else if (nsc_ImageUrl != '') {
+            var a = document.createElement("a");
+            a.setAttribute("href", URLDecode(nsc_ClickUrl));
+            a.setAttribute("target", "_blank");
+            var img = document.createElement("img");
+            img.setAttribute("src", nsc_ImageUrl);
+            img.setAttribute("border", 0);
+            img.setAttribute("id", "nsc_CrObj");
+            if ((nsc_adType == 1) || (nsc_adType == 3)) {
+                img.style.width = nsc_width;
+                img.style.height = nsc_height;
+            } else {
+                img.style.width = "100%";
+                img.style.height = "100%";
+            }
+            a.appendChild(img);
+            if (document.getElementById(nsc_DivId)) {
+                div = document.getElementById(nsc_DivId);
+            } else {
+                var div = document.createElement("div");
+                div.id = nsc_DivId;
+            }
+            div.setAttribute("height", "10");
+            div.style.width = nsc_width;
+            div.appendChild(a);
+            return div;
+        }
+    } catch (e) {}
+}
+
+function NSCompanionOverLap(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId) {
+    try {
+        CompRemoveElem(nsc_CompDiv);
+        nscObjOverLap = NSCreateAd(nsc_params, nsc_CompDiv, nsc_DivId);
+        nsc_CompDiv.appendChild(nscObjOverLap);
+        nsc_CompDiv.style.height = nsc_params.height;
+    } catch (e) {}
+}
+
+function NSCompanionSlider(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId) {
+    try {
+        nscObjSlider = NSCreateAd(nsc_params, nsc_CompDiv, nsc_DivId);
+        t4 = setTimeout("NSMoveDown()", 35);
+    } catch (e) {}
+}
+
+function NSMoveDown() {
+    try {
+        var ph = nscObjSlider.clientHeight;
+        if (phSlider) {
+            nsc_CompDiv.parentNode.insertBefore(nscObjSlider, nsc_CompDiv);
+            phSlider = false;
+        }
+        if (ph < nsc_height) {
+            if (nscObjSlider.style.pixelHeight) {
+                nscObjSlider.style.pixelHeight = ph + 5;
+            } else {
+                nscObjSlider.style.height = ph + 5 + 'px';
+            }
+            nscObjSlider.style.clip = 'rect(0px,' + nsc_width + 'px,' + ph + 'px,0px)';
+            t1 = setTimeout('NSMoveDown()', 35);
+        } else {
+            if (t1 != null) {
+                clearTimeout(t1);
+            }
+        }
+    } catch (e) {}
+}
+var hoffset = -10;
+var objPlayer, objScroller;
+
+function NSCompanionScrollerLeft(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId) {
+    try {
+        nscObjScroller = NSCreateAd(nsc_params, nsc_CompDiv, nsc_DivId);
+        objPlayerDiv = document.getElementById("player");
+		if(objPlayerDiv==null)
+			objPlayerDiv = document.getElementById("videoplayer");
+        objScroller = document.getElementById("nsc_Scroller");
+        if (phScroller) {
+            try {
+                strClose = '<div id="nsc_ScrollClose" style="position:absolute;width:0px;height:0px;z-index:9999999999"><img src="/photo/5373569.cms" style="cursor:pointer;width:0px;height:0px;" title="Close" onclick="javascript:NSScrollClose();"/></div>';
+                if (typeof(nscObjScroller) == 'object') {
+                    limStrScroller = strClose + '<div id="nsc_Scroll">' + nscObjScroller.innerHTML + '</div>';
+                } else {
+                    limStrScroller = strClose + '<div id="nsc_Scroll">' + nscObjScroller + '</div>';
+                }
+                if (objScroller == null) {
+                    var nsc_Scroller = document.createElement("div");
+                    nsc_Scroller.id = "nsc_Scroller";
+                    nsc_Scroller.innerHTML = limStrScroller;
+                    objPlayerDiv.parentNode.insertBefore(nsc_Scroller, objPlayerDiv);
+                    var tempFV = /<param name="FlashVars" value="">/ig;
+                    nsc_Scroller.innerHTML.replace(tempFV, "<PARAM NAME='FlashVars' VALUE='" + document.getElementById("FVClickTag").value + "'>");
+                    objScroller = nsc_Scroller;
+                } else {
+                    CompRemoveElem(objScroller);
+                    objScroller.innerHTML = limStrScroller;
+                }
+            } catch (e) {}
+            phScroller = false;
+        }
+        objScroll = document.getElementById("nsc_Scroll");
+        objScrollClose = document.getElementById("nsc_ScrollClose");
+        objCr = document.getElementById("nsc_CrObj");
+        objScroller.style.position = "absolute";
+        objScroller.style.overflow = "auto";
+        objScroller.style.zIndex = "9999999";
+        objScroller.style.visibility = "visible";
+        //objPlayerDiv.style.width = "330px";
+        //objPlayerDiv.style.height = "270px";
+        objPlayerDiv.style.width = nsc_pw;
+        objPlayerDiv.style.height = nsc_ph;
+        objScrollClose.style.background = "#eeeeee";
+        objScroll.style.position = "absolute";
+        objScroll.style.overflow = "auto";
+        phScroller = true;
+        prmHeight = nsc_params.height;
+        prmWidth = nsc_params.width;
+        switch (nsc_floatType) {
+        case 0:
+            {
+				if(typeof(nsc_ScrollReplay) != 'undefined') {
+					nsc_ScrollReplay.style.visibility='hidden';
+				}
+				//objScroller.style.width = "20px";
+				objScroller.style.width = nsc_params.width + 20 + "px";
+				objScroller.style.height = nsc_params.height + "px";
+				//objCr.style.width = "20px";
+				objCr.style.width = nsc_params.width + "px";
+				objCr.style.height = nsc_params.height + 'px';
+				objScroller.style.top = objPlayerDiv.offsetTop + "px";
+				objScroller.style.left = objPlayerDiv.offsetLeft + "px";
+				objScroll.style.width = nsc_params.width + "px";
+				objScroll.style.top = (eval(objScroller.style.height.replace('px', '')) - eval(objCr.style.height.replace('px', ''))) / 2 + 'px';
+				//t4 = setTimeout("NSScrollRight()", 35);
+				if(this.nsc_fixed == 0) {
+					t5 = setTimeout("NSScrollClose()", 7000);
+				}
+				break;
+            }
+        case 1:
+            {
+                objScroller.style.width = "420px";
+                objScroller.style.height = "20px";
+                objCr.style.width = nsc_params.width + 'px';
+                objCr.style.height = '20px';
+                objScroller.style.top = objPlayerDiv.offsetTop + eval(objPlayerDiv.style.height.replace('px', ''));
+                objScroller.style.left = objPlayerDiv.offsetLeft;
+                objScroll.style.left = (eval(objScroller.style.width.replace('px', '')) - eval(objCr.style.width.replace('px', ''))) / 2 + 'px';
+                objScrollClose.style.left = (eval(objPlayerDiv.style.width.replace('px', '')) - (eval(objScrollClose.style.width.replace('px', ''))));
+                t4 = setTimeout("NSScrollBottom()", 35);
+                break;
+            }
+        }
+				if(this.nsc_fixed == 0) {
+	        if (frstPlay == 0) {
+		          getMovieName('myMovie').pauseVideo();
+			        frstPlay = 1;
+				  }
+				}
+    } catch (e) {}
+}
+
+function NSCompanionScroller(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId) {
+    try {
+        nscObjScroller = NSCreateAd(nsc_params, nsc_CompDiv, nsc_DivId);
+        objPlayerDiv = document.getElementById("player");
+        objScroller = document.getElementById("nsc_Scroller");
+        if (phScroller) {
+            try {
+                strClose = '<div id="nsc_ScrollClose" style="position:absolute;width:20px;height:20px;z-index:9999999999"><img src="/photo/5373569.cms" style="cursor:pointer;width:20px;height:20px;" title="Close" onclick="javascript:NSScrollClose();"/></div>';
+                if (typeof(nscObjScroller) == 'object') {
+                    limStrScroller = strClose + '<div id="nsc_Scroll">' + nscObjScroller.innerHTML + '</div>';
+                } else {
+                    limStrScroller = strClose + '<div id="nsc_Scroll">' + nscObjScroller + '</div>';
+                }
+                if (objScroller == null) {
+                    var nsc_Scroller = document.createElement("div");
+                    nsc_Scroller.id = "nsc_Scroller";
+                    nsc_Scroller.style.zIndex = "9999999";
+                    nsc_Scroller.innerHTML = limStrScroller;
+                    objPlayerDiv.parentNode.insertBefore(nsc_Scroller, objPlayerDiv);
+                    var tempFV = /<param name="FlashVars" value="">/ig;
+                    if (nsc_SwfUrl != '')
+                        nsc_Scroller.innerHTML.replace(tempFV, "<PARAM NAME='FlashVars' VALUE='" + document.getElementById("FVClickTag").value + "'>");
+                    objScroller = nsc_Scroller;
+                } else {
+                    CompRemoveElem(objScroller);
+                    objScroller.innerHTML = limStrScroller;
+                }
+            } catch (e) {}
+            phScroller = false;
+        }
+        objScroll = document.getElementById("nsc_Scroll");
+        objScrollClose = document.getElementById("nsc_ScrollClose");
+        objCr = document.getElementById("nsc_CrObj");
+        objScroller.style.position = "absolute";
+        objScroller.style.overflow = "auto";
+        objScroller.style.zIndex = "99999999";
+        objScroller.style.visibility = "visible";
+        objPlayerDiv.style.width = "420px";
+        objPlayerDiv.style.height = "320px";
+        objScrollClose.style.background = "#eeeeee";
+        objScroll.style.position = "absolute";
+        objScroll.style.overflow = "auto";
+        phScroller = true;
+        prmHeight = nsc_params.height;
+        prmWidth = nsc_params.width;
+        switch (nsc_floatType) {
+        case 0:
+            {
+                objScroller.style.width = "20px";
+                objScroller.style.height = "320px";
+                objCr.style.width = "20px";
+                objCr.style.height = nsc_params.height + 'px';
+                objScroller.style.top = objPlayerDiv.offsetTop;
+                objScroller.style.left = eval(objPlayerDiv.style.width.replace('px', '')) + objPlayerDiv.offsetLeft;
+                objScroll.style.top = (eval(objScroller.style.height.replace('px', '')) - eval(objCr.style.height.replace('px', ''))) / 2 + 'px';
+                t4 = setTimeout("NSScrollRight()", 35);
+                break;
+            }
+        case 1:
+            {
+                objScroller.style.width = "420px";
+                objScroller.style.height = "20px";
+                objCr.style.width = nsc_params.width + 'px';
+                objCr.style.height = '20px';
+                objScroller.style.top = objPlayerDiv.offsetTop + eval(objPlayerDiv.style.height.replace('px', ''));
+                objScroller.style.left = objPlayerDiv.offsetLeft;
+                objScroll.style.left = (eval(objScroller.style.width.replace('px', '')) - eval(objCr.style.width.replace('px', ''))) / 2 + 'px';
+                objScrollClose.style.left = (eval(objPlayerDiv.style.width.replace('px', '')) - (eval(objScrollClose.style.width.replace('px', ''))));
+                t4 = setTimeout("NSScrollBottom()", 35);
+                break;
+            }
+        }
+    } catch (e) {}
+}
+
+function NSCompReplayDiv(crid) {
+    if (nsc_ScrollReplay == null) {
+		var strScrollReplay;
+        nsc_ScrollReplay = document.createElement("div");
+        nsc_ScrollReplay.id = "nsc_ScrollReplay";
+        nsc_ScrollReplay.style.position = 'absolute';
+		nsc_ScrollReplay.style.zIndex = "99999999";
+		if(crid != 0) {
+			strScrollReplay = '<a href="'+nsc_ClickUrl+'" target="_blank" border="0"><img border="0" title="LOGO" src="http://adscontent3.indiatimes.com/photo/' + crid + '.cms" /></a>';
+		} else {
+			strScrollReplay = '<img style="cursor:pointer;" title="Rollover" src="http://adscontent3.indiatimes.com/photo/5802523.cms" onmouseover="javascript:NSCompReplayClick();"/>';
+		}
+        nsc_ScrollReplay.innerHTML = strScrollReplay;
+        objPlayerDiv.parentNode.insertBefore(nsc_ScrollReplay, objPlayerDiv);
+        objScrollReplay = document.getElementById("nsc_ScrollReplay");
+		if(crid != 0) {
+			objScrollReplay.style.top = (objPlayerDiv.offsetTop - 21) + "px";
+	        objScrollReplay.style.left = objPlayerDiv.offsetLeft + "px";
+		} else {
+	        objScrollReplay.style.height = '14px';
+		    objScrollReplay.style.width = '57px';
+			objScrollReplay.style.top = objPlayerDiv.offsetTop - eval(objScrollReplay.style.height.replace('px', '')) + "px";
+	        objScrollReplay.style.left = objPlayerDiv.offsetLeft + (eval(objPlayerDiv.style.width.replace('px', '')) - (eval(objScrollReplay.style.width.replace('px', '')))) + "px";
+		}
+    } else {
+        nsc_ScrollReplay.style.visibility = "visible";
+    }
+}
+
+function NSCompReplayClick() {
+    nsc_ScrollReplay.style.visibility = "hidden";
+    NSCompanionAd(nsc_tempParams, nsc_track, nsc_roll, nsc_shagn, this.nsc_crid, this.nsc_fixed);
+    objScroller.style.visibility = "visible";
+}
+
+function NSScrollClose() {
+	try
+	{
+    objScroller.style.visibility = "hidden";
+    objScroller.style.width = 0;
+    objScroller.style.height = 0;
+    objPlayerDiv.style.border = "0px solid red";
+    phScroller = true;
+    //clearTimeout(t4);
+	if(typeof(t5) != 'undefined') {
+	    clearTimeout(t5);
+	}
+    if (nsc_roll == 1) {
+        NSCompReplayDiv(this.nsc_crid);
+    } else {
+        objScroller.innerHTML = '';
+    }
+	if(this.nsc_fixed == 0) {
+	    if (frstPlay == 1) {
+		    getMovieName('myMovie').playVideo();
+			if (nsc_shagn == 1) {
+				frstPlay = 0;
+			}
+		}		
+	}
+	else {
+		strStaticImg = '<a href="'+nsc_ClickUrl+'" target="_blank" border="0">';
+		strStaticImg += '<img title="LOGO" src="http://adscontentmm.indiatimes.com/photo/'+this.nsc_crid+'.cms" width="420px" />';
+		strStaticImg += '</a>';
+		document.getElementById('nsc_moveDown').innerHTML = strStaticImg;
+	}
+	}
+	catch (e)
+	{}
+}
+
+function NSScrollRight() {
+    try {
+        var ph = objScroller.clientWidth;
+        while (ph < nsc_width) {
+            if (objScroller.style.pixelWidth) {
+                objScroller.style.pixelWidth = ph + 1;
+				objScroll.style.pixelWidth = ph + 1;
+                if (objCr.style.pixelWidth < eval(prmWidth)) {
+                    objCr.style.pixelWidth = ph + 1;
+                }
+            } else {
+                objScroller.style.width = ph + 1 + 'px';
+				objScroll.style.width = ph + 1 + 'px';
+                if (eval(objCr.style.width.replace('px', '')) < eval(prmWidth)) {
+                    objCr.style.width = ph + 1 + 'px';
+                }
+            }
+            ph = objScroller.clientWidth;
+        }
+        if (ph >= nsc_width) {
+            t5 = setTimeout("NSScrollClose()", 7000);
+        }
+    } catch (e) {}
+}
+
+function NSScrollBottom() {
+    try {
+        var ph = objScroller.clientHeight;
+        while (ph < 270) {
+            if (objScroller.style.pixelHeight) {
+                objScroller.style.pixelHeight = ph + 1;
+                if (objCr.style.pixelHeight < eval(prmHeight)) {
+                    objCr.style.pixelHeight = ph + 1;
+                }
+            } else {
+                objScroller.style.height = ph + 1 + 'px';
+                if (eval(objCr.style.height.replace('px', '')) < eval(prmHeight)) {
+                    objCr.style.height = ph + 1 + 'px';
+                }
+            }
+            ph = objScroller.clientHeight;
+        }
+        if (ph >= 270) {
+            t5 = setTimeout("NSScrollClose()", 10000);
+        }
+    } catch (e) {}
+}
+
+function NSCompanionAd(nsc_obj, nsc_tracking, nsc_rollover, nsc_showagn, nsc_crid, nsc_fixed) {
+    try {
+        nsc_tempParams = nsc_obj;
+        nsc_params = 'nsc_params=' + nsc_obj;
+        eval(nsc_params);
+        nsc_adType = nsc_params.adType ? nsc_params.adType : 0;
+        nsc_CompDiv = document.getElementById("nsc_overlap");
+        if (typeof(nsc_tracking) != 'undefined') {
+            nsc_track = nsc_tracking;
+        } else {
+            nsc_track = 0;
+        }
+        if (typeof(nsc_rollover) != 'undefined') {
+            nsc_roll = nsc_rollover;
+        } else {
+            nsc_roll = 0;
+        }
+		if (typeof(nsc_showagn) != 'undefined') {
+            nsc_shagn = nsc_showagn;
+        } else {
+            nsc_shagn = 0;
+        }
+		if (typeof(nsc_crid) != 'undefined') {
+			this.nsc_crid = nsc_crid;
+		} else {
+			this.nsc_crid = 0;
+		}
+		if (typeof(nsc_fixed) != 'undefined') {
+			this.nsc_fixed = nsc_fixed;
+		} else {
+			this.nsc_fixed = 0;
+		}
+        for (i = 0; i < nscDivId.length; i++) {
+            if (document.getElementById(nscDivId[i])) {
+                divRemove = document.getElementById(nscDivId[i]);
+                CompRemoveElem(divRemove);
+            }
+        }
+        if (nscOldHtml == '') {
+            nscOldHtml = nsc_CompDiv.innerHTML;
+        } else {
+            if (nsc_adType != 1) {
+                if (nsc_CompDiv.innerHTML != nscOldHtml) {
+                    nsc_CompDiv.innerHTML = nscOldHtml;
+                }
+            }
+        }
+        switch (nsc_adType) {
+        case 1:
+            {
+                nsc_DivId = nscDivId[0];
+                NSCompanionOverLap(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId);
+                break;
+            }
+        case 2:
+            {
+                nsc_DivId = nscDivId[1];
+                NSCompanionSlider(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId);
+                break;
+            }
+        case 3:
+            {
+                nsc_DivId = nscDivId[2];
+                if (nsc_track == 1) {
+                    NSCompanionScrollerLeft(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId);
+                } else {
+                    NSCompanionScroller(nsc_params, nsc_CompDiv, nsc_tracking, nsc_DivId);
+                }
+                break;
+            }
+        }
+    } catch (e) {}
+}
+ 

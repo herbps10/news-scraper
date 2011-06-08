@@ -1,0 +1,2558 @@
+﻿body
+{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: Arial;
+    font-size: 13px;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+.NoMargin
+{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px; 
+    margin-bottom: 0px;
+}
+.HelpTip
+{
+    border: 1px solid #CCCCCC;
+    height: 30px;
+    background-color: #FFFF99;
+    font-size: 10px;
+    vertical-align: middle;
+}
+.MainPart
+{
+}
+.MainRight
+{
+}
+.MainLeft
+{
+}
+.updatedDate
+{
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+.HeaderDate
+{
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    color: #575757;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.GalleryTitle
+{
+    font-family: Arial;
+    font-size: 8pt;
+    color: #000000;
+    text-decoration: none;
+    text-align: left;
+}
+
+.detaildPageTitle2
+{
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-left: 5px;
+    background-color: #FB9D04;
+    text-transform: uppercase;
+    height: 30px;
+}
+.detaildPageTitle2 a
+{
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.parentChannelTitle
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: Arial;
+    text-decoration: none;
+    font-size: 17pt;
+}
+
+
+.DetaildTitleGolden
+{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    padding: 0px;
+}
+.DetailedSummary
+{
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+}
+
+.Padding
+{
+padding:10px;	
+}
+.PaddingLeft5
+{
+    padding-left: 5px;
+}
+.PaddingRight5
+{
+    padding-right: 5px;
+}
+
+.PaddingLeft10
+{
+    padding-left: 10px;
+}
+.PaddingTop10
+{
+    padding-top: 1px;
+}
+.SourceTitle
+{
+    font-family: Arial;
+    font-size: 13px;
+    color: #000000;
+    background: #EEEEEE;
+    text-decoration: none;
+    padding-left: 0px;
+    height: 16px;
+}
+
+
+.ImageTable
+{
+    display: inline;
+}
+
+.ImageTable TD
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: black;
+    font-family: Arial;
+    text-align: center;
+}
+.TT
+{
+    width: 200px;
+    border-right: midnightblue 1px solid;
+    border-top: midnightblue 1px solid;
+    border-left: midnightblue 1px solid;
+    border-bottom: midnightblue 1px solid;
+    filter: Gray;
+}
+.GrayImage
+{
+    filter: Gray;
+    cursor: hand;
+    text-decoration: none;
+    border-right: white 0px dashed;
+    border-top: white 0px dashed;
+    border-left: white 0px dashed;
+    border-bottom: white 0px dashed;
+    border-collapse: collapse;
+}
+.NormalImage
+{
+    cursor: pointer;
+    text-decoration: none;
+    border-right: white 0px dashed;
+    border-top: white 0px dashed;
+    border-left: white 0px dashed;
+    border-bottom: white 0px dashed;
+    background-repeat: no-repeat;
+    background-size: 100%
+}
+
+
+.ImageOverText
+{
+    padding-left: 8px;
+    font-weight: normal;
+    font-size: 12px;
+    filter: Alpha(Opacity=70);
+    color: #ffffff;
+    padding-top: 5px;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    opacity: .7;
+    position: absolute;
+    background-color: #000000;
+    -moz-opacity: .70;
+}
+.ImageOverText2
+{
+    font-weight: normal;
+    font-size: 8pt;
+    filter: Alpha(Opacity=70);
+    color: #ffffff;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    moz-opacity: .7;
+    opacity: .7;
+    position: absolute;
+}
+.ImageOverText3
+{
+    padding-left: 1px;
+    font-weight: normal;
+    font-size: 11px;
+    filter: Alpha(Opacity=70);
+    opacity: .7;
+    moz-opacity: .7;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: black;
+}
+
+.Header1
+{
+    font-weight: normal;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: black;
+}
+
+.Header2
+{
+    font-weight: normal;
+    font-size: 13px;
+    color: #ffffff;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: black;
+}
+
+.ImageOverText3 Table
+{
+    padding-left: 8px;
+    font-weight: normal;
+    font-size: 11px;
+    color: #ffffff;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+}
+.ThumTitle
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #000000;
+    padding-top: 2px;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.MoreHeader
+{
+    font-size: 13px;
+    color: #FB9D04;
+    font-family: Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    font-weight: bold;
+}
+.MoreHeader2
+{
+    font-size: 13px;
+    color: #FB9D04;
+    font-family: Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    text-decoration: none;
+    
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.MoreHeader3
+{
+    color: #FB9D04;
+    font-family: Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.MoreItem
+{
+    font-size: 10px;
+    color: #000000;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+.RelatedHeader
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #ffffff;
+    font-style: normal;
+    font-family: Arial;
+    background-color: #b68809;
+    text-decoration: none;
+    padding-left: 5px;
+    height: 17px;
+}
+
+
+.SummaryImage
+{
+    cursor: hand;
+    text-decoration: none;
+}
+
+.rightNewsArea
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: black;
+    padding-top: 1px;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.rightNewsArea2
+{
+    font-weight: bold;
+    font-size: 13px;
+    color: black;
+    padding-top: 2px;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.rightNewsArea3
+{
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    padding-top: 2px;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.ThumTable
+{
+    cursor: hand;
+}
+.ListItem
+{
+    font-size: 4px;
+    color: black;
+}
+.NowNext
+{
+    padding-left: 6px;
+    font-weight: bold;
+    font-size: 10pt;
+    color: #ffffff;
+    font-family: Arial;
+}
+.NowNextsmall
+{
+    font-weight: normal;
+    font-size: 10px;
+    color: #ffffff;
+    font-family: Arial;
+}
+.sportTitles
+{
+    font-weight: normal;
+    font-size: 10px;
+    color: #000000;
+    font-family: Arial;
+    text-decoration: none;
+}
+.sportTitles A
+{
+    font-weight: normal;
+    font-size: 10px;
+    color: #000000;
+    font-family: Arial;
+    text-decoration: none;
+}
+.sportsCountries
+{
+    font-weight: bold;
+    font-size: 9pt;
+    color: #000000;
+    font-style: normal;
+    font-family: Arial;
+    text-transform: uppercase;
+}
+.sportsCountries A
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: #000000;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+.Discussion
+{
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+    display: inline;
+    text-align: left;
+    display: inline;
+    float: left;
+}
+
+
+.Discussion A
+{
+    font-weight: bold;
+    font-size: 13px;
+    color: #b08000;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+.Discussion2
+{
+    font-weight: normal;
+    font-size: 11px;
+    padding-bottom: 5px;
+    color: #000000;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+.Discussion2 A
+{
+    font-weight: bold;
+    font-size: 11px;
+    color: #b08000;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+.DiscussionA
+{
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    text-decoration: none;
+}
+.UserComment
+{
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */
+	width: 680px;
+}
+.TopicSummary P
+{
+    margin-top: 0px;
+}
+.debates
+{
+    color: #b08000;
+    font-size: 11px;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+    list-style-type: square;
+    padding: 0px;
+}
+
+.debatesA
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #ffffff;
+    font-style: normal;
+    font-family: Arial;
+    background-color: transparent;
+    text-decoration: underline;
+    padding-right: 5px;
+    height: 17px;
+}
+
+.PublishDate
+{
+    font-weight: normal;
+    font-size: 10px;
+    color: #000000;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.PublishDate2
+{
+    font-weight: normal;
+    font-size: 10px;
+    color: dimgray;
+    font-style: normal;
+    font-family: Arial;
+    text-decoration: none;
+}
+.bBody1
+{
+    padding-right: 4px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #000000;
+    font-family: 'Arial';
+    text-decoration: none;
+}
+.bBody
+{
+    padding-right: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+    font-family: 'Arial';
+    text-decoration: none;
+}
+.CommentBtn
+{
+    font-family: Arial, Arial;
+    font-size: 13px;
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #FB9D04;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2px;
+}
+
+.ErrorBox
+{
+    font-size: 10pt;
+    font-family: Arial, Arial;
+    color: red;
+    background-color: lemonchiffon;
+    border-collapse: collapse;
+}
+.ErrorBox2
+{
+    font-size: 8pt;
+    font-family: Arial, Arial;
+    color: red;
+    border-collapse: collapse;
+}
+.progress
+{
+    width: 0px;
+    height: 14px;
+    color: whitesd;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #959595;
+    padding-left: 0px;
+}
+.CommentHeader
+{
+    font-size: 16px;
+    font-family: 'Arial';
+    background-color: #F0F0F0;
+     color: #FB9D04;
+}
+
+.InternalLink
+{
+    font-weight: bold;
+    color: #FB9d04;
+    text-decoration: none;
+}
+
+.InternalLink a:hover
+{
+    text-decoration: underline;
+}
+
+.TopicHeader
+{
+    font-size: 11px;
+    font-family: Arial;
+    text-decoration: none;
+    text-align: left;
+    vertical-align: middle;
+    padding: 2px;
+    font-weight: bold;
+    color: #FB9D04;
+}
+
+.DetaildSuammary
+{
+    font-weight: normal;
+    font-size: 13px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.PreviewComment
+{
+    font-size: 13px;
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+    display: inline;
+    text-align: left;
+    display: inline;
+    float: left;
+    background-color: #EEEEEE;
+}
+.Hide
+{
+    width: 0px;
+    display: none;
+    visibility: hidden;
+}
+.SmallButton
+{
+    font-family: Arial;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #FB9d04;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 1px;
+}
+
+.CommentAdded
+{
+    padding-right: 3px;
+    font-size: 11px;
+    color: black;
+    font-family: 'Arial';
+    text-decoration: none;
+}
+
+.FeedbackBox
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+    background-color: #F5F5F5;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 0px;
+    border-right: lightgrey 1px outset;
+    border-top: lightgrey 1px outset;
+    border-left: lightgrey 1px outset;
+    border-bottom: lightgrey 1px outset;
+    width: 100%;
+}
+
+.ErrorBox1
+{
+    font-size: 13px;
+    font-family: Arial;
+    color: red;
+    background-color: floralwhite;
+    border-collapse: collapse;
+    font-weight: bold;
+}
+.CDiv
+{
+    visibility: visible;
+    overflow: visible;
+    position: static;
+}
+
+/* Start ---- For Printable and Non Printable Style -----*/
+.SiteLogoOverMenu
+{
+    padding-left: 11px;
+    display: block;
+}
+.PrintAbleLogo
+{
+    display: none;
+}
+.AdvertisingSection
+{
+    width: 528px;
+}
+.AdvertisingSectionSub
+{
+    width: 528px;
+    text-align: right;
+    display: block;
+}
+.LeftMenu
+{
+    display: block;
+}
+
+.RightBlocks
+{
+    display: block;
+}
+.CopyRightBottom
+{
+    display: block;
+}
+.DetaildTitle
+{
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FB9D04;
+    text-decoration: none;
+    padding-left: 10px;
+    text-transform: uppercase;
+    height: 28px;
+    background-color:#F0F0F0;
+}
+.DetaildTitle a
+{
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+.DetaildTitleShort
+{
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FB9D04;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    padding-left: 10px;
+    height: 28px;
+}
+.FeedbackListInArticle
+{
+    display: block;
+}
+.PaddingLeft5
+{
+    padding-left: 4px;
+}
+.PrintAbleLogoPadding
+{
+    display: block;
+}
+
+/* End ------ For Printable and Non Printable Style -----*/
+
+
+
+
+
+
+.PageH
+{
+    padding: 2px;
+    text-align: center;
+}
+.PageItem
+{
+	font-size: 11px;
+	text-align: center;
+	font-weight: bold;
+	color: #000099;
+}
+.PageItem a
+{
+    font-size: 11px;
+    text-align: center;
+    color: #FB9D04;
+    text-decoration: none;
+}
+.PageItemSep
+{
+    color: #FB9D04;
+}
+
+
+.LineBreak
+{
+    height: 1px;
+    background-color: #cccccc;
+    padding: 0px;
+}
+
+.LineBreak2
+{
+    height: 1px;
+    background-color: #ceb469;
+    padding: 0px;
+}
+.Square
+{
+    height: 4px;
+    width: 4px;
+    background-color: #EEEEEE;
+    padding: 0px;
+}
+.AText
+{
+    scrollbar-face-color: #e7e7e7;
+    scrollbar-highlight-color: #959595;
+    scrollbar-shadow-color: #959595;
+    scrollbar-3dlight-color: #ffffff;
+    scrollbar-arrow-color: #959595;
+    scrollbar-track-color: #ffffff;
+    scrollbar-darkshadow-color: #ffffff;
+    border-right: gray 1px solid;
+    border-top: gray 1px solid;
+    border-left: gray 1px solid;
+    border-bottom: gray 1px solid;
+    font-size: 12px;
+}
+.jazad
+{
+    left: 475px;
+    position: absolute;
+    top: 25px;
+    z-index: 1;
+}
+.SearchTitle
+{
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.SearchTitle A
+{
+    font-family: Arial;
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 3px;
+}
+.SearchSum
+{
+    font-family: Arial;
+    font-size: 12px;
+    padding: 3px;
+}
+.Searchdate
+{
+    font-family: Arial;
+    font-size: 10px;
+    color: dimgray;
+    padding: 3px;
+}
+.SearchTotal
+{
+    font-family: Arial;
+    font-size: 13px;
+    font-weight:bold;
+    color: #FB9D04;
+}
+.SearchWord
+{
+    font-family: Arial;
+    font-size: 13px;
+    font-weight:bold;
+    color: #004B91;
+}
+.SearchWord A
+{
+    text-decoration: none;
+    font-size: 11px;
+    color: #004B91;
+    font-weight: bold;
+}
+
+.SearchPanelTitle
+{
+    font-size: 18px;
+    font-weight:bold;
+    color: #FB9D04;
+    background-color: #F0F0F0;
+}
+.SearchText
+{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    background-color: #EEEEEE;
+    border-right: lightgrey 1px solid;
+    border-top: lightgrey 1px solid;
+    border-left: lightgrey 1px solid;
+    border-bottom: lightgrey 1px solid;
+}
+.SearchPages
+{
+    font-size: 11px;
+    text-decoration: none;
+    color: black;
+}
+.SearchPages A
+{
+    text-decoration: none;
+    font-size: 11px;
+    color: #FB9D04;
+    font-weight: bold;
+}
+
+.tinymce_style
+{
+}
+.PostingLinksBody
+{
+    padding: 1px;
+    vertical-align: top;
+}
+.footer
+{
+}
+.MostActiveDescHeader
+{
+    background-color:#FB9D04;
+    text-transform:capitalize;
+}
+
+.MostActiveDescBody
+{
+    background-color: #EEEEEE;
+    font-size: 13px;
+}
+
+.MostActiveDescBody a
+{
+    font-size: 13px;
+    color: #FB9D04;
+    text-decoration: none;
+}
+
+
+.TableBorder
+{
+    border-right: lightgrey 1px solid;
+    border-top: lightgrey 1px solid;
+    border-left: lightgrey 1px solid;
+    border-bottom: lightgrey 1px solid;
+}
+
+.LnkImage
+{
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-right: lightgrey 1px solid;
+    border-top: lightgrey 1px solid;
+    border-left: lightgrey 1px solid;
+    border-bottom: lightgrey 1px solid;
+    background-color: #097BBD;
+    font-weight: bold;
+    width: 60%;
+    padding: 2px;
+}
+
+.fixedBottom
+{
+    /*position : fixed;*/
+    position: fixed;
+    height: auto;
+    bottom: 0px;
+    right: auto;
+    left: 0px;
+    top: auto;
+    z-index: 1000;
+    text-align: center;
+    width: 94%;
+}
+.fixedTop
+{
+    position: fixed;
+    height: auto;
+    bottom: auto;
+    right: auto;
+    left: 1px;
+    top: 0px;
+    text-align: right;
+    z-index: 1000;
+}
+
+.fixedBottom2
+{
+    position: fixed;
+    height: auto;
+    bottom: 17px;
+    right: auto;
+    top: auto;
+    text-align: right;
+    z-index: 1000;
+}
+
+.PLayer
+{
+    background-color: #F0F0F0;
+    border-top: darkgray 1px solid;
+    border-bottom: darkgray 1px solid;
+    border-right: darkgray 1px solid;
+    border-left: darkgray 1px solid;
+    width: 563px;
+}
+
+.Skyscrapper_Header
+{
+    font-size: 13px;
+    color: #FFFFFF;
+    font-family: Arial;
+    text-decoration: none;
+    background-color: #FB9D04;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+.Skyscrapper_Body
+{
+    font-size: 12px;
+    color: #000000;
+    font-style: normal;
+    font-family: Arial;
+    background-color: #EEEEEE;
+    text-decoration: none;
+}
+.Skyscrapper_Bullet
+{
+    width: 10px;
+    background-image: url('../Media/ver2/Images/bullet-bar-orange.gif');
+    background-repeat: no-repeat;
+    background-position: 2px 6px;
+}
+
+.InVideo_Bold
+{
+    background-position: left top;
+    background-image: url('../Services/Images/hr_video_small.jpg' );
+    font-weight: bold;
+    background-repeat: repeat-x;
+    padding-top: 5px;
+}
+.InVideo_Text
+{
+    background-position: left top;
+    background-image: url('../Services/Images/hr_video_small.jpg' );
+    background-repeat: repeat-x;
+    padding-top: 5px;
+}
+.InVideo_CloseButton
+{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.imgBorder1
+{
+    border-right: #b6cbce 1px solid;
+    border-bottom: #b6cbce 1px solid;
+    padding: 3px;
+}
+
+
+
+
+
+.VideoItem
+{
+    background-repeat: no-repeat;
+    background-position: left;
+    cursor: pointer;
+    width: 11px;
+    height: 10px;
+    padding-left: 3px;
+}
+.VideoIconSmall
+{
+    background-repeat: no-repeat;
+    background-position: left;
+    cursor: pointer;
+    width: 10px;
+    height: 8px;
+    padding-left: 3px;
+}
+
+.VideoIconBig
+{
+    background-repeat: no-repeat;
+    background-position: left;
+    cursor: pointer;
+    width: 11px;
+    height: 10px;
+    padding-left: 3px;
+}
+.left
+{
+    float: left;
+}
+.pad1
+{
+    padding: 4px 3px 0px 3px;
+}
+.w155
+{
+    width: 155px;
+}
+
+.w270
+{
+    width: 270px;
+}
+.w330
+{
+    width: 330px;
+    
+}
+.w135
+{
+    width:135px;
+}
+
+.w363
+{
+    width: 363px;
+}
+.h89
+{
+    height:89px;
+}
+.videoPager
+{
+    cursor: pointer;
+    font-size: 16px;
+    color: White;
+}
+.vdocont
+{
+    width: 605px;
+    overflow: hidden;
+    padding-left: 13px;
+    float: left;
+}
+.fixedArea
+{
+    width: 605px;
+    overflow: scroll;
+    height: 200px;
+    scrollbar-face-color: #E4E4E4;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #FFFFFF;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: black;
+    float: left;
+}
+.fixedArea li
+{
+    display: inline;
+    float: left;
+    padding: 10px 10px 10px 10px;
+}
+.hidden
+{
+    display: none;
+    visibility: hidden;
+}
+
+/* Start - New Site Version 2 Styles */
+
+#tdRecommend
+{
+    padding-top: 10px;
+}
+
+
+#dvSummaryExt
+{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+#dvSummaryMain
+{
+    width: 1000px;
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+#dvPostingExt
+{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+#dvPostingMain
+{
+    width: 1000px;
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+#dvBanners
+{
+    height: 110px;
+    background-color: #EEEEEE;
+    text-align: left;
+    font-size: 20px;
+    color: #FFFFFF;
+    vertical-align: middle;
+    padding-top: 20px;
+    display:none;
+    visibility:hidden;
+}
+
+
+#dvMainAd
+{
+    width: 728px;
+    height: 90px;
+    background-color: Gray;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+}
+
+#dvMainAd_Summary
+{
+    width: 680px;
+    background-color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    display:none;
+}
+
+#dvMainAd_Posting
+{
+    width: 680px;
+    background-color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#dvAdSpacer
+{
+    width: 22px;
+    float: left;
+}
+
+#dvSmallAd
+{
+    width: 250px;
+    height: 90px;
+    background-color: Gray;
+    text-align: center;
+    float: right;
+}
+
+#dvPageHeaderRow
+{
+    height: 200px;
+}
+#dvLogo
+{
+	background-position: center;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-top: 20px;
+	height: 180px;
+	width: 103px;
+	float: left;
+	background-image: url('../Media/ver2/Images/header_logo2.png');
+	background-repeat: no-repeat;
+	
+}
+.dvLogoInternal
+{
+	height: 180px;
+	width: 103px;
+}
+#dvHeaderText
+{
+    padding-top: 90px;
+    width: 430px;
+    float: left;
+}
+#dvAJHead
+{
+	background-position: left;
+	height: 85px;
+	padding-left: 5px;
+	
+	vertical-align: baseline;
+	background-image: url('../Media/ver2/Images/header_text2.jpg');
+	background-repeat: no-repeat;
+}
+.dvAJHeadInternal
+{
+	height: 75px;
+	width:373px;
+    
+}
+#dvDate
+{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+#dvDayQuote
+{
+    height: 200px;
+    width: 450px;
+    background-color: #FFFFFF;
+    float: right;
+   /* background-image: url('/Media/Images/QOD.jpg');*/
+}
+.qodLinker
+{
+border-width:0px;
+border-style:none;
+}
+
+.qodLinker img
+{
+border-width:0px;
+border-style:none;
+}
+
+#dvSiteMenu
+{
+    height: 70px;
+    background-color: #FB9D04;
+}
+#dvMenuBottom
+{
+    height: 20px;
+}
+.MainBG
+{
+}
+
+#dvContentMain
+{
+    background-color: #FFFFFF;
+    width: 1000px;
+    display: block;
+    visibility: visible;
+    clear: both;
+}
+#dvContent_Left
+{
+    width: 680px;
+    float: left;
+    text-align: left;
+    vertical-align: top;
+}
+.dvContent_Left_Class
+{
+    width: 680px;
+    float: left;
+    text-align: left;
+    vertical-align: top;
+}
+#dvContent_Spacer
+{
+    width: 20px;
+    float: left;
+}
+.#dvContent_Spacer_Class
+{
+    width: 20px;
+    float: left;
+}
+#dvContent_Right
+{
+    width: 300px;
+    float: right;
+    text-align: left;
+    vertical-align: top;
+}
+.dvContent_Right_Class
+{
+    width: 300px;
+    float: right;
+    text-align: left;
+    vertical-align: top;
+}
+
+#dvFooter
+{
+    height: 150px;
+    background-color: #FFFFFF;
+    
+}
+
+
+.DivTitles
+{
+    background-color: #EEEEEE;
+    font-family: 'Arial';
+    font-size: 25px;
+    font-weight: Bold;
+    color: #FB9D04;
+    margin-top:3;
+    padding-top:3px;
+    text-align: left;
+    height: 32px;
+    padding-left: 1px;
+
+}
+
+.DivTitlesMinusHeight
+{
+    background-color: #EEEEEE;
+    font-family: 'Arial';
+    font-size: 25px;
+    font-weight: Bold;
+    color: #FB9D04;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 1px;
+    padding-top: 3px;
+    padding-top: 3px;
+    margin-bottom: auto;
+}
+
+.TodaySchedule
+{
+    background-color: #FB9d04;
+    color: #FFFFFF;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;    
+    vertical-align: middle;
+    background-image: url('../Media/ver2/Images/SubMenu_Slice.jpg');
+    padding-top:5px;
+}
+.TodaySchedule a
+{
+    
+    color: #FFFFFF;
+
+}
+.SummaryBoxes
+{
+    background-color: #FFFFFF;
+}
+.SkyScrapperBoxes
+{
+    background-color: #EEEEEE;
+}
+
+
+
+.RelatedTable
+{
+    font-size: 13px;
+    color: #EEEEEE;
+    font-family: Arial;
+}
+
+.RelatedTable A
+{
+    font-size: 13px;
+    color: #000000;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.RelatedBoxSummary
+{
+    padding-bottom: 5px;
+    font-size: 11px;
+}
+
+.Caps
+{
+    text-transform: uppercase;
+}
+.RelatedItem
+{
+}
+.w135
+{
+    width: 135px;
+}
+
+
+.indexText-Bold1
+{
+    font-size: 12px;
+    font-weight: bold;
+}
+.indexText-Bold2
+{
+    font-size: 14px;
+    font-weight: bold;
+    line-height:15px;
+}
+
+.indexText-Font2
+{
+       font-family:Arial;
+}
+.indexSmallText
+{
+    font-size: 10px;
+}
+.indexMediumText
+{
+    font-size: 13px;
+}
+.indexMediumTextBold
+{
+    font-size: 13px;
+    font-weight:bold;
+}
+.indexNormalText
+{
+    font-size: 12px;
+}
+.indexSummaryText
+{
+    font-size: 12px;
+}
+.indexSummaryHeihgt
+{
+    line-height:12px;
+}
+.graytext
+{
+    color: #999999;
+}
+.orangetext
+{
+    color: #FB9D04;
+}
+
+.orangetext a
+{
+    color: #FB9D04;
+}
+.bluetext
+{
+   color: #10367d;
+}
+
+.IndexNewsTitle3
+{
+    font-size: 25px;
+     font-weight:bold;
+    padding-top: 1px;
+    text-decoration: none;
+    line-height: 26px;
+}
+
+.skyscLines
+{        
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+    vertical-align: top;  
+    margin-left:15px;
+    
+}
+.skyscBullet
+{
+    padding-right: 0px;
+    padding-left: 1px;
+    float: left;       
+}
+.skyscBullet img
+{
+    
+    padding-right: 0px;
+    padding-left: 1px;
+    float: left;
+    padding-top:7px;    
+}
+
+.TopStoryBullet
+{
+    padding-right: 0px;
+    padding-left: 1px;
+    float: left;
+      
+}
+.TopStoryBullet img
+{
+    padding-right: 0px;
+    padding-left: 1px;
+    float: left;
+    padding-top:5px;    
+}
+.storyThumbnailArea
+{
+    width: 130px;
+    float: left;
+    padding-right: 5px;
+}
+.storyThumbTitle
+{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    color: black;
+    font-family: Arial;
+}
+.topStoryThumbs-outer
+{
+    height:93px;
+    
+}
+.normalbk
+{
+	background-color:#F0F0F0;
+}
+.normalcolor
+{
+ color: #FB9D04;
+}
+
+.showc_thumb
+{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    vertical-align: top;
+    display: block;
+    z-index: 2;
+    left: 45px;
+    top: 20px;
+}
+
+.showc_thumb a
+{
+    padding: 0px;
+    margin: 0px;
+    background-position: 0px 0px;
+    cursor: pointer;
+    width: 52px;
+    height: 50px;
+    background-image: url(../Media/ver2/Images/icon_video_play5.png);
+    background-repeat: no-repeat;
+    display:inline-block;
+}
+ .showc_thumb a img
+ {
+            width:32px;
+            height:32px; 
+            border: 0px;
+ }
+ 
+ 
+              
+.img-vid-icon
+{
+    
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    vertical-align: top;
+    display: block;
+    z-index: 2;
+    left: 45px;
+    top: 20px;
+}
+.img-vid-icon a
+{
+    padding: 0px;
+    margin: 0px;
+    background-position: 0px 0px;
+    cursor: pointer;
+    width: 52px;
+    height: 50px;
+    background-image: url(../Media/ver2/Images/icon_video_play5.png);
+    background-repeat: no-repeat;
+    display:inline-block;
+}              
+.img-vid-icon a:hover
+              {                       
+               background-image:url(../Media/ver2/Images/icon_video_play5_over.png);
+             
+              }
+ .img-vid-icon a img
+ {
+            width:32px;
+            height:32px; 
+            border: 0px;
+ }
+ 
+ .playerDiv             
+ {
+        float:left;
+        line-height:0;
+        position:relative;
+        
+ }
+/* Accordion Menu styles*/
+    .box_headTrue
+    {
+        cursor: pointer;
+        position: relative;
+        margin: 0px;
+        font-family: 'Arial';
+        font-size: 25px;
+        font-weight: Bold;
+        color: #FB9D04;
+        padding: 3px;
+        background-color: #EEEEEE ;
+    }
+    .box_headFalse
+    {
+        position: relative;
+        background-color: #EEEEEE ;
+        margin: 0px;
+        font-family: 'Arial';
+        font-size: 25px;
+        font-weight: Bold;
+        color: #FB9D04;
+        padding: 3px;
+    }
+
+    .menu_left
+    {
+        background: #EEEEEE url(../Media/ver2/Images/down.gif) center right no-repeat;
+    }
+    .menu_down
+    {
+        background: #EEEEEE url(../Media/ver2/Images/left.gif) center right no-repeat;
+    }
+    
+    .box_bodyTrue
+    {
+        display: none;
+       padding:0px 0px 0px 0px; 
+    }
+    .box_bodyFalse
+    {
+        padding:0px 0px 0px 0px;   
+    }
+    .boxColFalse
+    {
+    	display:block ;
+    }
+	.skyItem
+    {
+    	/*padding-bottom :10px;*/
+    	display:inline-block;
+    	width:100%;
+    
+    }
+    .SkyMainPart
+    {
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 0px 0px;
+		
+    }
+/*///*/
+
+
+/**  Start  -  Templates Internal    **/
+.Tmp_SPDetail_DetailedImgbox
+{
+    text-align: left;
+    padding-right: 5px;
+    float: left;
+    
+}
+
+.Tmp_News_DetailedImgbox
+{
+    text-align: left;
+    padding-right: 5px;
+    display: inline;
+    float: left;
+    
+}
+
+.Tmp_hSpace10
+{
+    height:10px;
+}
+.Tmp_hSpace5
+{
+    height:5px;
+}
+.Tmp_News_Body1
+{
+    
+    text-decoration: none;
+   
+}
+.Tmp_News_Body2
+{
+    
+    
+ }
+ 
+ .SourceBarTitle
+{
+    font-family: Arial;
+    font-size: 13px;
+    color: #000000;
+    background-color: #EEEEEE;
+    text-decoration: none;
+    padding-left: 3px;
+    height: 35px;
+    vertical-align:middle;
+}
+
+#dvArticleDate
+{
+    color: #999999;
+    font-weight: bold;
+    font-size: 10px;
+    padding-bottom: 5px;
+}
+
+.byLine
+{
+    font-family: 'Arial';
+    font-size: 11px;
+    font-weight:bold;
+    padding-right:5px;
+}
+#dvByLine_Date
+    {
+        padding-bottom:5px;
+    }
+.articleSumm
+{
+    font-weight: bold;
+}
+.articleTitle
+{
+    font-family: 'Arial';
+    font-weight:bold;
+    font-size: 25px;
+    
+}
+
+
+/**  End  -  Templates Internal    **/
+
+/**  Start  -  Interactive Elements  **/
+.FormButton
+{
+    background-color: #FB9D04;
+    font-weight: bold;
+    width: 80px;
+    height:25px;
+    color: #000099;
+}
+.formsTextbox
+{
+    font-family: Arial;
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    border: 1px solid #E3E3E2;
+    background-image: url(../Services/images/fieldsshadow.jpg);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 16px;
+    width: 360px;
+}
+.TextBox_Big
+{
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 19px;
+    font-family: 'Arial';
+    letter-spacing: 10px;
+    
+}
+.formsText
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+.formsTextShort
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+.formsText a
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #C18C00;
+    text-decoration: none;
+}
+.formsError
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #414141;
+    text-decoration: none;
+}
+
+.formsValidation
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #414141;
+    text-decoration: none;
+}
+
+
+
+.formButtons_2
+{
+    background-image: url(../Services/Images/form_button2.jpg);
+    background-repeat: no-repeat;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    height: 18px;
+    width: 70px;
+    font-weight: bold;
+}
+.CheckBox
+{
+    background-image: url(../Services/images/fieldsshadow.jpg);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    background-color: #E8E8E8;
+    height: 15px;
+    width: 16px;
+    margin-right: 5px;
+}
+
+.DropDownList
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    border: 1px solid #E3E3E2;
+    height: 22px;
+    width: 360px;
+}
+
+
+/**  End  -  Interactive Elements    **/
+
+
+.SkyScrapperSpacer
+{
+    height:1px;
+    background-color:#FFFFFF;
+    display:none;
+    visibility:hidden;
+    
+}
+
+/**  Start  -  Image Styles Elements  **/
+
+.imgBorder
+{
+    border-right: #b6cbce 1px solid;
+    border-top: #b6cbce 1px solid;
+    border-left: #b6cbce 1px solid;
+    border-bottom: #b6cbce 1px solid;
+    padding: 3px;
+
+}
+
+.OrangeBullet
+{
+    height: 5px;
+    width: 5px;
+}
+.imageMedium
+{
+    width: 330px;
+    height: 218px;
+}
+.imageThumbnail
+{
+    width: 135px;
+    height: 89px;
+}
+.imageThumbnail130
+{
+    cursor: pointer;
+    width: 130px;
+    height: 87px;
+    border-color: #f8a523;
+    z-index:0;
+}
+.imageThumbnail130Sel
+{
+    cursor: pointer;
+    width: 130px;
+    height: 87px;
+    border-color: #FB9D04;
+    border-style:solid;
+    border-width: 5px;
+    margin-left: -5px;
+    margin-top: -5px;
+    z-index: 100;
+}
+
+.imageMain
+{
+    width: 480px;
+    height: 318px;
+}
+.imageBigThumb
+{
+    width: 300px;
+    height: 198px;
+}
+.imageBigMAin
+{
+    width: 680px;
+    height: 450px;
+}
+
+/**  End  -  Image Styles Elements    **/
+
+/**  Start  -  Open Calais Box Style Elements    **/
+.OCalaisTitleBar
+{
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #FB9D04;
+    color: #10367D;
+    height: 35px;
+    padding-left: 10px;
+    background-image: url('../Media/ver2/Images/SubMenu_Slice.jpg');
+}
+.OCalaisHeadRow
+{
+	background-color:#EEEEEE;
+}
+.OCalaisBox
+{
+    border: 0px solid #CCCCCC;
+    width: 100%;
+}
+
+.OCalaisHeader
+{
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FB9D04;
+    text-decoration: none;
+    text-transform:;
+    padding-left: 14px;
+    background-color: #EEEEEE;
+    padding-top:8px;
+    height: 27px;
+}
+.OCalaisList
+{
+    color: #FB9D04;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 0px;
+}
+.OCalaisList a
+{
+    color: #000000;
+}
+.OCalaisList a:hover
+{
+    color: #808080;
+}
+.OCalaisList ul
+{
+    margin: 0px 2px 2px 14px;
+    padding-left: 2px;
+    list-style-type: square;
+    list-style-position: outside;
+}
+/**  End  -  Open Calais Box Style Elements    **/
+
+.ListStyle
+    {
+        font-size:18px;
+        color:#FB9D04;
+        
+    }
+.ListStyle a
+{
+    font-size:12px;
+        color: #000000; 
+}
+.ListStyle ul
+{
+    font-size:18px;
+    list-style-type: square;
+}
+.ListStyle li
+{
+   padding-left:5px;
+}
+/** Start  - Footer Elements  **/
+
+.FooterMenuItem
+{
+	font-size: 14px;
+	font-weight:bold;
+	color: #606060;
+	font-family: Arial;
+	text-decoration: none;
+	float: left;	
+	vertical-align:top;
+
+    padding-left: 10px;	
+    padding-top:20px;
+}
+.FooterMenuItem ul
+{
+   text-align:left;
+   padding-left: 0px;
+    padding-top:0px;
+    margin-left: 0px;
+    margin-top:0px;
+
+    vertical-align: top; 
+    list-style-type: none; 
+}
+.FooterMenuItem A
+{
+	color: #838383;
+	font-family: Arial;
+	text-decoration: none;
+}
+
+.FooterMenuItem A:hover
+{
+	color: #f8a523;
+	font-family: Arial;
+	text-decoration: none;
+}
+.FooterList
+{
+    vertical-align :top;
+	list-style-type: none;
+	text-align:left;
+	padding-left: 0px;
+	padding-top:0px;
+	margin-left: 0px;
+	margin-top:0px;
+}
+.FooterList li
+{
+	text-align:left;
+    padding-top:3px;
+   
+}
+/** end  - Footer Elements  **/
+
+.repeater-item
+{
+}
+.repearter-alter-item
+{
+    float:right;
+    padding-left:20px;
+}
+
+.searchChannelName
+{
+	color: #f8a523;
+	font-family: Arial;
+	text-decoration: none;
+    font-weight:bold;
+}
+.textcenter
+    {
+        text-align:center;
+    }
+    
+.SearchButton-Icon
+{
+    background-position: center top;
+    border-style: none;
+    background-image: url(../Media/ver2/Images/icon_search.png);
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    height: 20px;
+    cursor: pointer;
+}
+.textbox-white-clear
+{
+    border: 1px solid #FFFFFF;
+    width:145px;
+    height:16px;
+    text-decoration:none;
+}
+.Height10
+{
+    height:10px;
+}
+.OrangeBar
+{
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color:#FB9d04;
+    background-image: url('../Media/ver2/Images/SubMenu_Slice.gif');
+    background-repeat: repeat-x;
+}
+.FeaturedBoxItems
+{
+width:135px;
+padding-left:17px;
+padding-right:17px;
+}
+.FeaturedBox
+{
+    background-color:#EEEEEE;
+}
+.FeaturedBoxTitle
+{
+    padding-top:6px;
+    width:600px;
+}
+
+
+/*----Breaking News Block-----*/
+.BreakingH_v2
+{
+    font-size: 14px;
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #FB9D04;
+    text-align: center;
+    vertical-align: middle;
+    height:35px;
+    width:150px;
+    padding: 2px;
+    font-weight: bold;
+    text-transform: uppercase;   
+    background-image: url('../Media/ver2/Images/SubMenu_Slice.jpg');
+}
+.BreakingBlock_v2
+{
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+}
+.Breaking2_v2
+{
+
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+    color: #FB9D04; 
+}
+
+.Breaking
+{
+	font-weight: bold;
+	font-size: 12px;
+	font-style: normal;
+	font-family: Verdana;
+	text-decoration: none;
+	padding-bottom:3px;
+	text-align: left;
+}
+.Breaking2
+{
+	font-weight: bold;
+	font-size: 12px;
+	font-style: normal;
+	font-family: Verdana;
+	text-decoration: none;
+	text-align: left;
+	background-color: White;
+	border-right: lightgrey 1px solid;
+	border-top: lightgrey 1px solid;
+	border-left: lightgrey 1px solid;
+	border-bottom: lightgrey 1px solid;
+}
+
+.BreakingH
+{
+	font-size: 11px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+	background-color: #b68809;
+	text-align:left ;
+	vertical-align:middle;
+	padding:2px;
+	font-weight:bold;
+}
+/*----End Breaking News Block-----*/
+
+
+.tabTitle
+{
+    color: #FFFFFF;
+    font-family:Arial;
+    font-size: 25px;
+    font-weight:bold;
+    height:40px;
+    padding-left:2px;
+}
+
+.tabBody
+{
+    background-position: top;
+    background-image: url('../Media/ver2/Images/whatshot_slice.jpg');
+    background-repeat: repeat-x;
+    padding-bottom: 0px;
+}
+
+.tabButton
+{
+    float: left;
+    vertical-align:middle;
+    cursor:pointer;
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    height:25px;
+    width:80px;
+    text-align:center;
+    padding-top:5px;
+   
+}
+.tabButtonSelected
+{
+    float: left;
+    vertical-align:middle;
+    cursor: pointer;
+    background-color: #eeeeee;
+    color: #F78411;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    height:25px;
+    width:80px;
+    text-align:center;
+    padding-top:5px;
+}
+.tabButtonText
+{
+    font-family:Arial;
+    font-size: 16px;
+    font-weight: bold;
+    line-height:15px;
+}
+
+
+.SuggestTopButton
+{
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #FB9D04;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+    font-weight: bold;
+    font-family: 'Arial';
+    width: 180px;
+    height: 25px;
+    padding-top:5px;
+}
+
+
+/*   Spacing Elements    */
+.ThumbsBottomSpace
+{
+    height:10px;
+}
+.skyScrapperGrayBottom
+{
+    background-color: #eeeeee;
+    height: 5px;
+}
+.skyScrapperWhiteBottom
+{
+    background-color: #ffffff;
+    height: 20px;
+    
+}
+.w10
+{
+    width:10px;
+}
+h318
+{
+    height:318px;
+}
+/*    end      */
+
+.te
+{
+ min-height:48px
+}
+
+/* Related Videos - GSA Search */
+.relatedVideos
+{
+    position: relative;
+}
+
+.videoImage
+{
+    border: 0px none;
+    width: 100px;
+    height: 66px;
+}
+
+.videoImageIcon 
+{
+    display: block;
+    height: 32px;
+    left: 25px;
+    position: absolute;
+    top: 7px;
+    vertical-align: top;
+    width: 32px;
+    z-index: 2;
+}
+
+.videoImageIcon a 
+{
+    background-image: url("../Media/ver2/Images/icon_video_play5.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    width: 52px;
+}
+
+.videoImageIcon a:hover 
+{
+    background-image: url("../Media/ver2/Images/icon_video_play5_over.png");
+}
+
+.QuoteboxBack
+{
+    background-color:#eeeeee;
+}
+
+.QuoteBoxTitleBar
+{
+    background-color:orange;
+    
+}
+
+.MentionStrip
+{
+    font-weight: bold;
+    background-color: #66CCFF;
+    height:20px;
+    vertical-align:middle;
+}
+
+/* Author Profile - Start*/
+.AuthorProfileImageBox
+{
+    float:left;
+    padding-right:15px;
+}
+.AuthorProfileImage
+{
+    height:89px;
+    width:89px;
+}
+.HrOrangeBar
+{
+    border-style: none;
+    color: #FB9D04;
+    height: 3px;
+    background-color: orange;
+}
+
+
+.right{float:right;}
+
+/* Author Profile - End*/
+
